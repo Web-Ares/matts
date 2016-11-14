@@ -161,17 +161,24 @@
             },
             _initSwiper = function() {
 
+
                 _swiper = new Swiper( _obj.find('.swiper-container'), {
                     nextButton: _obj.find('.swiper-button-next'),
                     prevButton:  _obj.find('.swiper-button-prev'),
                     pagination: '.swiper-pagination',
                     paginationClickable: true,
-                    //effect: 'fade',
+                    parallax: true,
                     autoplay: 5000,
                     slidesPerView: 1,
                     speed: 700,
-                    autoplayDisableOnInteraction: false,
-                    loop: true
+                    loop: true,
+                    onSlideNextEnd: function () {
+                        if( $( '.swiper-slide-active' ).hasClass( 'swiper-slide-duplicate' ) ){
+
+                             _swiper.slideTo(1,0);
+
+                        }
+                    }
 
                 } );
 
