@@ -133,6 +133,7 @@
 
                         }
 
+
                         if( _action ) {
 
                             if( _obj.hasClass( 'site__header_hide' ) ) {
