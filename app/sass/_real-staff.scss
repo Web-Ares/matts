@@ -103,6 +103,8 @@
 .real-stuff__description {
   position: absolute;
   z-index: 2;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
 }
 .real-stuff__description_1 {
   top: 86px;

@@ -70,7 +70,10 @@
       color: #ed1b24;
     }
     .btn {
-      background-color: #7a222e;
+      &:before {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
     }
 
   }

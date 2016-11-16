@@ -11,18 +11,6 @@
 
         } );
 
-        $.each( $('.products-cookies__items'), function () {
-
-            new CookiesSlider( $(this) );
-
-        } );
-
-        $.each( $('.cookies-info_btn'), function () {
-
-            new InfoCookiesPopup( $(this) );
-
-        } );
-
         $.each( $('.site__menu-nav_anchors'), function () {
 
             new ScrollPanel( $(this) );
@@ -32,12 +20,6 @@
         $.each( $('.slides'), function () {
 
             new Slides( $(this) );
-
-        } );
-
-        $.each( $('.product-single__gallery' ), function () {
-
-            new SwiperGallery( $(this) );
 
         } );
 
@@ -99,6 +81,8 @@
             _content = $('.site__content'),
             _action = false,
             _action2 = false,
+            _flagHide = true,
+            lastScrollTop = 0,
             _showMenuBtn = _obj.find('.site__menu-btn'),
             _globalWidth = 0;
 
@@ -130,13 +114,40 @@
                     },
                     'scroll': function () {
 
-                        _action = _window.scrollTop() >= _obj.innerHeight() * 4;
+                        _action = _window.scrollTop() >= _obj.innerHeight() * 2;
 
-                        if( _window.scrollTop() >= _obj.innerHeight() * 2 ) {
+                        if( _window.scrollTop() >= _obj.innerHeight() ) {
 
-                            _obj.addClass( 'site__header_fixed' );
+                            if( _flagHide ) {
+
+                                _flagHide = false;
+                                _obj.addClass( 'site__header_hide' );
+
+                            }
+
 
                         } else {
+
+                            _flagHide = true;
+                            _obj.removeClass( 'site__header_hide' );
+
+                        }
+
+                        if( _action ) {
+
+                            if( _obj.hasClass( 'site__header_hide' ) ) {
+
+                                setTimeout( function() {
+
+                                    _obj.addClass( 'site__header_fixed' );
+                                    _obj.removeClass( 'site__header_hide' );
+
+                                }, 100 );
+
+                            }
+
+
+                        } else if ( _window.scrollTop() <= _obj.innerHeight() * 3 ) {
 
                             _obj.removeClass( 'site__header_fixed' );
 
@@ -200,6 +211,41 @@
                     }
 
                 } );
+
+                $(window).scroll(function(event){
+
+                    var st = $(this).scrollTop();
+
+                    if (st > lastScrollTop){
+
+                        _checkScroll( 1 );
+
+                        var direction = 1
+
+                    } else {
+
+                        _checkScroll( -1 );
+
+                        var direction = -1
+
+                    }
+                    lastScrollTop = st;
+
+                    if ( direction < 0  ) {
+
+                        _action2 = true;
+
+                    } else {
+
+                        setTimeout( function() {
+
+                            _action2 = false;
+
+                        }, 300 )
+
+                    }
+                });
+
                 _showMenuBtn.on( {
                     click: function() {
 
@@ -256,128 +302,6 @@
                 _html.css( {
                     overflowY: 'hidden'
                 } );
-
-            };
-
-        _init();
-    };
-
-    var CookiesSlider = function ( obj ) {
-
-        var _self = this,
-            _obj = obj,
-            _window = $( window ),
-            _swiperInit = false,
-            _swiper;
-
-        var _addEvents = function () {
-
-                _window.on( {
-                    resize: function() {
-
-                        if( _window.width() < 768 ) {
-
-                            if( !_swiperInit ) {
-
-                                _initSwiper();
-                                _swiperInit = true;
-
-                            }
-
-
-                        } else {
-
-                            if( _swiperInit ) {
-
-                                _destroySwiper();
-                                _swiperInit = false;
-                            }
-
-                        }
-
-
-                    }
-                } );
-
-            },
-            _initSwiper = function() {
-
-                _swiper = new Swiper( _obj.find( '.swiper-container' ), {
-                    slidesPerView: 1,
-                    loop: true,
-                    autoplay: 3000,
-                    speed: 500,
-                    nextButton: _obj.find('.swiper-button-next'),
-                    prevButton:  _obj.find('.swiper-button-prev')
-                } );
-
-            },
-            _destroySwiper = function() {
-
-                _swiper.destroy( true, true);
-
-            },
-            _init = function() {
-                _obj[0].obj = _self;
-                _addEvents();
-
-                if( _window.width() < 768 ) {
-
-                    if( !_swiperInit ) {
-
-                        _initSwiper();
-                        _swiperInit = true;
-                    }
-
-                }
-
-            };
-
-        _init();
-    };
-
-    var InfoCookiesPopup = function ( obj ) {
-
-        var _self = this,
-            _obj = obj,
-            _window = $( window),
-            _popup = $('.popup__cookies-info');
-
-        var _addEvents = function () {
-
-                _window.on( {
-                    resize: function() {
-
-                        if( _window.width() < 1024 ) {
-
-
-
-                        }
-
-                    }
-                } );
-
-                _obj.on( {
-                    click: function() {
-
-                        if( _window.width() < 1024 ) {
-
-                            var cirItem = $(this),
-                                title = cirItem.find('.cookies-info__title'),
-                                content = cirItem.find('.cookies-info__text');
-
-                            _popup.find('.site__main-title').html( title.html() );
-                            _popup.find('.cookies-info__description').html( content.html() )
-
-                        }
-
-                    }
-                } );
-
-            },
-            _init = function() {
-                _obj[0].obj = _self;
-                _addEvents();
 
             };
 
@@ -504,7 +428,7 @@
                     topInWindow = topPos-curScroll,
                     visiblePercent = 1-(topInWindow/windowH);
 
-                if( visiblePercent > .3 ){
+                if( visiblePercent > .5 ){
                     if( !_obj.hasClass('slides_active') ){
                         _obj.addClass('slides_active');
                     }
@@ -521,51 +445,6 @@
 
         //public methods
 
-
-        _init();
-    };
-
-    var SwiperGallery = function (obj) {
-
-        //private properties
-        var _self = this,
-            _galleryTop = obj.find('.gallery__top'),
-            _galleryThumbs = obj.find('.gallery__thumbs');
-
-        //private methods
-        var _initSwiper = function(){
-
-                var galleryTop = new Swiper(_galleryTop, {
-                    spaceBetween: 10,
-                    onSlideChangeEnd: function(swiper){
-                        var activeIndex = swiper.activeIndex;
-                        $(galleryThumbs.slides).removeClass('is-selected');
-                        $(galleryThumbs.slides).eq(activeIndex).addClass('is-selected');
-                        galleryThumbs.slideTo(activeIndex,500, false);
-
-                    }
-
-                } );
-                var galleryThumbs = new Swiper(_galleryThumbs, {
-                    freeMode: true,
-                    centeredSlides: false,
-                    slidesPerView: 2,
-                    touchRatio: 0.2,
-                    onClick: function (swiper, event){
-                        var clicked = swiper.clickedIndex;
-                        swiper.activeIndex = clicked;
-                        swiper.updateClasses();
-                        $(swiper.slides).removeClass('is-selected');
-                        $(swiper.clickedSlide).addClass('is-selected');
-                        galleryTop.slideTo(clicked,500, false);
-
-                    }
-                } );
-
-            },
-            _init = function () {
-                _initSwiper();
-            };
 
         _init();
     };

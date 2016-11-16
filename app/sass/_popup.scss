@@ -12,6 +12,7 @@
   padding-bottom: 40px;
   background: $popup-back;
   text-align: center;
+  -webkit-transition: opacity 500ms ease-in-out;
   transition: opacity 500ms ease-in-out;
 
   &_opened {
@@ -36,15 +37,15 @@
   &__content {
     display: none;
     text-align: left;
-    padding: 20px 14px
+    padding: 0 14px
   }
 
   &__close {
     position: absolute;
-    top: -6px;
-    width: 14px;
-    height: 14px;
-    right: 18px;
+    top: -32px;
+    width: 15px;
+    height: 15px;
+    right: 19px;
     text-indent: -5000px;
     cursor: pointer;
     z-index: 3;

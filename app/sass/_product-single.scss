@@ -10,10 +10,7 @@
 
 }
 .product-single__layout {
-  position: relative;
-  z-index: 2;
-  max-width: 1208px;
-  padding: 0 15px;
+  max-width: 700px;
   margin: 0 auto;
 }
 .product-single__info {
@@ -35,11 +32,16 @@
   display: inline-block;
   vertical-align: top;
   color: #9a9a9a;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+
 }
 .product-single__gallery {
-  margin: 0 auto 39px;
+  margin: 0 -15px 39px;
   height: 300px;
-  max-width: 310px;
 
   .swiper-container {
     width: 100%;
@@ -101,36 +103,25 @@
 }
 .product-single__quantity-change {
   margin: 0 0 16px;
-
-  input.site__input {
-    width: 44px;
-    height: 34px;
-    color: #512c1d;
-    font-size: 16px;
-    line-height: 16px;
-    @include main-font4();
-    text-align: center;
-  }
-
 }
-.product-single__btn {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  width: 23px;
-  height: 30px;
-  font-size: 25px;
-  line-height: 25px;
-  @include main-font4();
-  color: #512d1d;
-  text-align: center;
+.product-single__info-message {
+  position: absolute;
+  left: 0;
+  z-index: 4;
+  bottom: 10px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #512c1d;
+  -webkit-transition: opacity 0.3s ease, visibility 0.3s ease, top 0.5s ease, left 0.5s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease, top 0.5s ease, left 0.5s ease;
 
-  span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  &.visible {
+    opacity: 1;
+    visibility: visible;
   }
 
 }
@@ -138,8 +129,16 @@
 @media (min-width: $desktop) {
 
   .product-single {
-    padding: 53px 14px 45px;
+    padding: 53px 14px 85px;
     text-align: left;
+
+    p {
+      margin: 0 0 30px;
+    }
+
+  }
+  .product-single__layout {
+    max-width: 1208px;
   }
   .product-single__info {
     padding-left: 41.5%;
@@ -169,7 +168,7 @@
       width: 100%;
     }
     .gallery__thumbs {
-      width: 57%;
+      width: 57.2%;
       height: 138px;
       box-sizing: border-box;
       margin: 31px auto 0;
@@ -188,17 +187,42 @@
 
   }
   .product-single__price {
-    margin: 0 0 23px 4px;
+    margin: 0 0 17px 4px;
     font-size: 30px;
     line-height: 34px;
   }
   .product-single__items {
-
+    padding: 186px 81px 0 3px;
+    line-height: 25px;
   }
   .product-single__quantity {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 2px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 4px;
+
+    form {
+      >span {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 4px 0 0 0;
+      }
+    }
+    .btn {
+      margin: 37px auto 0;
+      width: 100%;
+      max-width: 260px;
+      height: 54px;
+    }
+
+  }
+  .product-single__quantity-change {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 13px 0 0;
   }
 
 }

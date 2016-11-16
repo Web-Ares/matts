@@ -20,23 +20,69 @@ var paths = {
         {
             dist: 'index.min.js',
             contains: [
-                'app/js/jquery.index.js',
+                'app/js/jquery.main.js',
+                'app/js/jquery.hero.js',
+                'app/js/jquery.our-cookies-slider.js',
+                'app/js/jquery.real-stuff.js',
+                'app/js/jquery.info-cookies-popup.js',
+                'app/js/jquery.products-cookies-slider.js',
+                'app/js/jquery.popup.js',
+                'app/js/jquery.websters-select.js'
+            ]
+        },
+        {
+            dist: 'single-product.min.js',
+            contains: [
+                'app/js/jquery.main.js',
+                'app/js/jquery.single-product.js',
+                'app/js/jquery.popup.js',
+                'app/js/jquery.number-spinner.js',
+                'app/js/jquery.ajax-cart.js'
+            ]
+        },
+        {
+            dist: 'cart.min.js',
+            contains: [
                 'app/js/jquery.main.js',
                 'app/js/jquery.popup.js',
-                'app/js/jquery.websters-select.js'
+                'app/js/jquery.number-spinner.js',
+                'app/js/jquery.ajax-cart.js'
             ]
         },
         {
-            dist: 'ui.min.js',
+            dist: 'not-found.min.js',
             contains: [
-                'app/js/jquery.popup.js',
-                'app/js/jquery.websters-select.js'
+                'app/js/jquery.main.js',
+                'app/js/jquery.not-found.js'
             ]
         },
         {
-            dist: 'tabs.min.js',
+            dist: 'confirmation.min.js',
             contains: [
-                'app/js/jquery.tabs.js'
+                'app/js/jquery.main.js',
+                'app/js/jquery.popup.js'
+            ]
+        },
+        {
+            dist: 'contact-us.min.js',
+            contains: [
+                'app/js/jquery.main.js',
+                'app/js/jquery.location.js'
+            ]
+        },
+        {
+            dist: 'shop.min.js',
+            contains: [
+                'app/js/jquery.main.js',
+                'app/js/jquery.products-cookies-slider.js'
+            ]
+        },
+        {
+            dist: 'checkout.min.js',
+            contains: [
+                'app/js/jquery.main.js',
+                'app/js/jquery.checkout.js',
+                'app/js/jquery.websters-select.js'
             ]
         }
     ],
@@ -86,7 +132,7 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('php', function () {
-    return gulp.src(paths.fonts, {
+    return gulp.src(paths.php, {
         base: 'app/php'
     }).pipe(gulp.dest('dist/php'));
 });
@@ -130,6 +176,7 @@ gulp.task('watch', function() {
     gulp.watch(paths.images,    ['images',  browserSync.reload]);
     gulp.watch(paths.pictures,    ['pictures',  browserSync.reload]);
     gulp.watch(paths.fonts,    ['fonts']);
+    gulp.watch(paths.php,    ['php']);
     gulp.watch(paths.styles,    ['styles', browserSync.reload]);
     gulp.watch(paths.vendorStyles,    [ 'vendorStyles' ]);
     gulp.watch(paths.views,     ['views',   browserSync.reload]);

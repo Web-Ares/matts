@@ -7,18 +7,19 @@
   z-index: 10;
   background: rgba(255,255,255,1);
 }
-.preloader > img {
+.preloader > .logo {
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 40% !important;
   max-width: 354px;
   z-index: 3;
   -webkit-transition: opacity 500ms ease-in-out;
   transition: opacity 500ms ease-in-out;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  background-size: contain;
 }
-.preloader_loaded > img,
+.preloader_loaded > .logo,
 .preloader_loaded > div{
   opacity: 0;
 }

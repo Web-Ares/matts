@@ -71,6 +71,66 @@ button.btn {
   line-height: 15px;
   min-width: 100px;
 }
+.btn_4 {
+  padding: 1px 10px 0;
+  height: 34px;
+  font-size: 16px;
+  line-height: 16px;
+}
+.btn_5 {
+  padding: 1px 31px 0;
+  height: 40px;
+  font-size: 20px;
+  line-height: 20px;
+}
+.btn_6 {
+  width: 147px;
+  height: 30px;
+  font-size: 15px;
+  line-height: 15px;
+  min-width: 100px;
+}
+.btn_7 {
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 20px;
+  min-width: 100px;
+  margin: 0 0 10px;
+  padding: 1px 10px 0;
+}
+.btn_8 {
+  padding: 1px 31px 0;
+  height: 40px;
+  font-size: 20px;
+  line-height: 20px;
+  background: #fff;
+  color: #8f0d19;
+
+  &:before {
+    background: #7f050f;
+
+  }
+
+  &:hover {
+    color: #fff;
+  }
+  &:active {
+    color: #fff;
+
+    &:before {
+      background: #9e0510;
+    }
+  }
+
+}
+.btn_9 {
+  height: 30px;
+  min-width: 125px;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 1px 15px 0;
+}
 
 @media (min-width: $desktop) {
 
@@ -90,6 +150,40 @@ button.btn {
     height: 60px;
     font-size: 33px;
     line-height: 33px;
+  }
+  .btn_4 {
+    padding: 1px 10px 0;
+    height: 52px;
+    font-size: 26px;
+    line-height: 26px;
+  }
+  .btn_5 {
+    height: 53px;
+    font-size: 26px;
+    line-height: 26px;
+  }
+  .btn_6 {
+    width: 257px;
+    height: 52px;
+    font-size: 26px;
+    line-height: 26px;
+  }
+  .btn_7 {
+    width: 257px;
+    height: 52px;
+    font-size: 26px;
+    line-height: 26px;
+  }
+  .btn_8 {
+    height: 61px;
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .btn_9 {
+    padding: 1px 31px 0;
+    height: 54px;
+    font-size: 27px;
+    line-height: 26px;
   }
 
 }
