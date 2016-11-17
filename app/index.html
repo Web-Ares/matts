@@ -105,7 +105,6 @@
         }
     </style>
 
-    <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/perfect-scrollbar.css">
     <link rel="stylesheet" href="css/index.css">
@@ -244,9 +243,10 @@
             <!-- hero -->
             <div class="hero">
 
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide" style="background-image: url('pic/hero-cookies1.jpg')">
+                <!-- slick-container -->
+                <div class="slick-container">
+                    <div class="slick-slide" style="background-image: url('pic/hero-cookies1.jpg')">
+                        <div>
 
                             <!-- hero__info -->
                             <div class="hero__info">
@@ -260,7 +260,9 @@
                             <!-- /hero__info -->
 
                         </div>
-                        <div class="swiper-slide" style="background-image: url('pic/hero-cookies2.jpg')">
+                    </div>
+                    <div class="slick-slide" style="background-image: url('pic/hero-cookies2.jpg')">
+                        <div>
 
                             <!-- hero__info -->
                             <div class="hero__info">
@@ -273,7 +275,9 @@
                             <!-- /hero__info -->
 
                         </div>
-                        <div class="swiper-slide" style="background-image: url('pic/hero-cookies3.jpg')">
+                    </div>
+                    <div class="slick-slide" style="background-image: url('pic/hero-cookies3.jpg')">
+                        <div>
 
                             <!-- hero__info -->
                             <div class="hero__info">
@@ -287,11 +291,8 @@
 
                         </div>
                     </div>
-
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-
                 </div>
+                <!-- /slick-container -->
 
                 <!-- hero__down -->
                 <a href="#" class="hero__down">
@@ -315,24 +316,11 @@
                 <div class="our-cookies__inner">
 
                     <div class="slick-container">
-                            <div class="slick-slide">
+                        <div class="slick-slide">
 
-                                <!-- our-cookies__info -->
-                                <div class="our-cookies__info">
-
-                                    <h2 class="site__title">CHOCOLATE CHIP</h2>
-                                    <div class="our-cookies__pic" style="background-image: url('pic/our-cookies1.jpg')"></div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                    <a href="#" class="btn">BUY NOW</a>
-
-                                </div>
-                                <!-- /our-cookies__info -->
-
-                            </div>
-                            <div class="slick-slide">
-
-                                <!-- our-cookies__info -->
-                                <div class="our-cookies__info">
+                            <!-- our-cookies__info -->
+                            <div class="our-cookies__info">
+                                <div>
 
                                     <h2 class="site__title">CHOCOLATE CHIP</h2>
                                     <div class="our-cookies__pic" style="background-image: url('pic/our-cookies1.jpg')"></div>
@@ -340,13 +328,31 @@
                                     <a href="#" class="btn">BUY NOW</a>
 
                                 </div>
-                                <!-- /our-cookies__info -->
-
                             </div>
-                            <div class="slick-slide">
+                            <!-- /our-cookies__info -->
 
-                                <!-- our-cookies__info -->
-                                <div class="our-cookies__info">
+                        </div>
+                        <div class="slick-slide">
+
+                            <!-- our-cookies__info -->
+                            <div class="our-cookies__info">
+                                <div>
+
+                                    <h2 class="site__title">CHOCOLATE CHIP</h2>
+                                    <div class="our-cookies__pic" style="background-image: url('pic/our-cookies1.jpg')"></div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                    <a href="#" class="btn">BUY NOW</a>
+
+                                </div>
+                            </div>
+                            <!-- /our-cookies__info -->
+
+                        </div>
+                        <div class="slick-slide">
+
+                            <!-- our-cookies__info -->
+                            <div class="our-cookies__info">
+                                <div>
 
                                     <h2 class="site__title">CHOCOLATE CHIP</h2>
                                     <div class="our-cookies__pic" style="background-image: url('pic/our-cookies1.jpg')"></div>
@@ -357,9 +363,10 @@
                                     <a href="#" class="btn">BUY NOW</a>
 
                                 </div>
-                                <!-- /our-cookies__info -->
-
                             </div>
+                            <!-- /our-cookies__info -->
+
+                        </div>
 
                     </div>
 
@@ -785,117 +792,114 @@
                     <!-- products-cookies__items -->
                     <div class="products-cookies__items">
 
-                        <!-- swiper-container -->
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
+                        <!-- slick-container -->
+                        <div class="slick-container">
 
-                                    <!-- products-cookies__item -->
-                                    <a href="#" class="products-cookies__item">
+                            <div class="slick-slide">
 
-                                        <h3 class="products-cookies__name">CHOCOLATE CHIP</h3>
+                                <!-- products-cookies__item -->
+                                <a href="#" class="products-cookies__item">
 
-                                        <!-- products-cookies__pic -->
-                                        <div class="products-cookies__pic" style="background-image: url('pic/products1.jpg')"></div>
-                                        <!-- /products-cookies__pic -->
+                                    <h3 class="products-cookies__name">CHOCOLATE CHIP</h3>
 
-                                        <span class="btn btn_2">add to cart</span>
+                                    <!-- products-cookies__pic -->
+                                    <div class="products-cookies__pic" style="background-image: url('pic/products1.jpg')"></div>
+                                    <!-- /products-cookies__pic -->
 
-                                    </a>
-                                    <!-- /products-cookies__item -->
+                                    <span class="btn btn_2">add to cart</span>
 
-                                </div>
-                                <div class="swiper-slide">
+                                </a>
+                                <!-- /products-cookies__item -->
 
-                                    <!-- products-cookies__item -->
-                                    <a href="#" class="products-cookies__item">
+                            </div>
+                            <div class="slick-slide">
 
-                                        <h3 class="products-cookies__name">CHOCOLATE CHIP</h3>
+                                <!-- products-cookies__item -->
+                                <a href="#" class="products-cookies__item">
 
-                                        <!-- products-cookies__pic -->
-                                        <div class="products-cookies__pic" style="background-image: url('pic/products1.jpg')"></div>
-                                        <!-- /products-cookies__pic -->
+                                    <h3 class="products-cookies__name">CHOCOLATE CHIP</h3>
 
-                                        <span class="btn btn_2">add to cart</span>
+                                    <!-- products-cookies__pic -->
+                                    <div class="products-cookies__pic" style="background-image: url('pic/products1.jpg')"></div>
+                                    <!-- /products-cookies__pic -->
 
-                                    </a>
-                                    <!-- /products-cookies__item -->
+                                    <span class="btn btn_2">add to cart</span>
 
-                                </div>
-                                <div class="swiper-slide">
+                                </a>
+                                <!-- /products-cookies__item -->
 
-                                    <!-- products-cookies__item -->
-                                    <a href="#" class="products-cookies__item">
+                            </div>
+                            <div class="slick-slide">
 
-                                        <h3 class="products-cookies__name">CHOCOLATE CHIP</h3>
+                                <!-- products-cookies__item -->
+                                <a href="#" class="products-cookies__item">
 
-                                        <!-- products-cookies__pic -->
-                                        <div class="products-cookies__pic" style="background-image: url('pic/products1.jpg')"></div>
-                                        <!-- /products-cookies__pic -->
+                                    <h3 class="products-cookies__name">CHOCOLATE CHIP</h3>
 
-                                        <span class="btn btn_2">add to cart</span>
+                                    <!-- products-cookies__pic -->
+                                    <div class="products-cookies__pic" style="background-image: url('pic/products1.jpg')"></div>
+                                    <!-- /products-cookies__pic -->
 
-                                    </a>
-                                    <!-- /products-cookies__item -->
+                                    <span class="btn btn_2">add to cart</span>
 
-                                </div>
-                                <div class="swiper-slide">
+                                </a>
+                                <!-- /products-cookies__item -->
 
-                                    <!-- products-cookies__item -->
-                                    <a href="#" class="products-cookies__item">
+                            </div>
+                            <div class="slick-slide">
 
-                                        <h3 class="products-cookies__name">CHOCOLATE CHIP</h3>
+                                <!-- products-cookies__item -->
+                                <a href="#" class="products-cookies__item">
 
-                                        <!-- products-cookies__pic -->
-                                        <div class="products-cookies__pic" style="background-image: url('pic/products1.jpg')"></div>
-                                        <!-- /products-cookies__pic -->
+                                    <h3 class="products-cookies__name">CHOCOLATE CHIP</h3>
 
-                                        <span class="btn btn_2">add to cart</span>
+                                    <!-- products-cookies__pic -->
+                                    <div class="products-cookies__pic" style="background-image: url('pic/products1.jpg')"></div>
+                                    <!-- /products-cookies__pic -->
 
-                                    </a>
-                                    <!-- /products-cookies__item -->
+                                    <span class="btn btn_2">add to cart</span>
 
-                                </div>
-                                <div class="swiper-slide">
+                                </a>
+                                <!-- /products-cookies__item -->
 
-                                    <!-- products-cookies__item -->
-                                    <a href="#" class="products-cookies__item">
+                            </div>
+                            <div class="slick-slide">
 
-                                        <h3 class="products-cookies__name">CHOCOLATE CHIP</h3>
+                                <!-- products-cookies__item -->
+                                <a href="#" class="products-cookies__item">
 
-                                        <!-- products-cookies__pic -->
-                                        <div class="products-cookies__pic" style="background-image: url('pic/products1.jpg')"></div>
-                                        <!-- /products-cookies__pic -->
+                                    <h3 class="products-cookies__name">CHOCOLATE CHIP</h3>
 
-                                        <span class="btn btn_2">add to cart</span>
+                                    <!-- products-cookies__pic -->
+                                    <div class="products-cookies__pic" style="background-image: url('pic/products1.jpg')"></div>
+                                    <!-- /products-cookies__pic -->
 
-                                    </a>
-                                    <!-- /products-cookies__item -->
+                                    <span class="btn btn_2">add to cart</span>
 
-                                </div>
-                                <div class="swiper-slide">
+                                </a>
+                                <!-- /products-cookies__item -->
 
-                                    <!-- products-cookies__item -->
-                                    <a href="#" class="products-cookies__item">
+                            </div>
+                            <div class="slick-slide">
 
-                                        <h3 class="products-cookies__name">CHOCOLATE CHIP</h3>
+                                <!-- products-cookies__item -->
+                                <a href="#" class="products-cookies__item">
 
-                                        <!-- products-cookies__pic -->
-                                        <div class="products-cookies__pic" style="background-image: url('pic/products1.jpg')"></div>
-                                        <!-- /products-cookies__pic -->
+                                    <h3 class="products-cookies__name">CHOCOLATE CHIP</h3>
 
-                                        <span class="btn btn_2">add to cart</span>
+                                    <!-- products-cookies__pic -->
+                                    <div class="products-cookies__pic" style="background-image: url('pic/products1.jpg')"></div>
+                                    <!-- /products-cookies__pic -->
 
-                                    </a>
-                                    <!-- /products-cookies__item -->
+                                    <span class="btn btn_2">add to cart</span>
 
-                                </div>
+                                </a>
+                                <!-- /products-cookies__item -->
+
                             </div>
 
-                            <!-- Add Arrows -->
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
                         </div>
+                        <!-- /slick-container -->
 
                     </div>
                     <!-- /products-cookies__items -->
@@ -1128,9 +1132,7 @@
     </div>
     <!-- /popup -->
 
-
     <script src="js/vendors/jquery-2.2.1.min.js"></script>
-    <script src="js/vendors/swiper.jquery.min.js"></script>
     <script src="js/vendors/slick.min.js"></script>
     <script src="js/vendors/perfect-scrollbar.jquery.min.js"></script>
     <script src="js/index.min.js"></script>

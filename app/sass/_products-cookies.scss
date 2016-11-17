@@ -3,7 +3,7 @@
   position: relative;
   text-align: center;
 
-  .swiper-container {
+  .slick-container {
 
     .swiper-wrapper {
 
@@ -14,14 +14,23 @@
     }
 
   }
-  .swiper-button-prev,
-  .swiper-button-next {
-    left: 16px;
-    background: none;
+  > div,
+  .slick-slide {
+    display: block;
+  }
+  .slick-prev,
+  .slick-next {
+    position: absolute;
     width: 40px;
     height: 40px;
     top: 34.5%;
+    left: 16px;
     margin-top: 0;
+    z-index: 10;
+    cursor: pointer;
+    background: none;
+    border: none;
+    text-indent: -9999px;
 
     &:after {
       position: absolute;
@@ -34,10 +43,21 @@
       content: '';
       -webkit-transform: translate(-50%,-50%) rotate(-45deg);
       transform: translate(-50%,-50%) rotate(-45deg);
+      -webkit-transition: border 0.3s ease;
+      transition: border 0.3s ease;
+    }
+
+    &:hover {
+
+      &:after {
+        border-top-color: #7a222e;
+        border-left-color: #7a222e;
+      }
+
     }
 
   }
-  .swiper-button-next {
+  .slick-next {
     left: auto;
     right: 16px;
     -webkit-transform: rotate(-180deg);
@@ -107,28 +127,21 @@
   .products-cookies {
     padding: 50px 0 0;
 
-    .swiper-container {
+    .slick-container {
+      @include flexbox();
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include align-items(flex-start);
+      @include justify-content(flex-start);
 
-      .swiper-wrapper {
-        @include flexbox();
-        @include flex-direction(row);
-        @include flex-wrap(wrap);
-        @include align-items(flex-start);
-        @include justify-content(flex-start);
-
-        .swiper-slide {
-          width: 33.333%;
-          margin: 0 0 35px;
-          padding: 0 20px;
-          text-align: center;
-        }
-
+      > div,
+      .slick-slide {
+        width: 33.333%;
+        margin: 0 0 35px;
+        padding: 0 20px;
+        text-align: center;
       }
 
-    }
-    .swiper-button-prev,
-    .swiper-button-next {
-      display: none;
     }
     .site__title {
       margin: 0 0 0.05em;
@@ -167,15 +180,13 @@
   .products-cookies {
     padding: 60px 0 0;
 
-    .swiper-container {
+    .slick-container {
 
-      .swiper-wrapper {
-
-        .swiper-slide {
-          width: 33.333%;
-          margin: 0 0 65px;
-        }
-
+      > div,
+      .slick-slide {
+        display: block;
+        width: 33.333%;
+        margin: 0 0 65px;
       }
 
     }
@@ -185,8 +196,7 @@
       -webkit-transition: opacity 0.3s ease,  -webkit-transform 0.3s ease;
       transition: opacity 0.3s ease, transform 0.3s ease;
 
-      .swiper-slide {
-        padding-top: 212px;
+      .slick-slide {
         opacity: 0;
         -webkit-transform: translateY(20px);
         transform: translateY(20px);
@@ -205,7 +215,7 @@
     &.slides_active {
       opacity: 1;
 
-      .swiper-slide {
+      .slick-slide {
         opacity: 1;
         -webkit-transform: translateY(0);
         transform: translateY(0);

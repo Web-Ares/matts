@@ -13,26 +13,16 @@
   .slick-prev,
   .slick-next {
     position: absolute;
-    top: 50%;
-    width: 27px;
-    height: 44px;
-    margin-top: -22px;
-    z-index: 10;
-    cursor: pointer;
-    -moz-background-size: 27px 44px;
-    -webkit-background-size: 27px 44px;
-    background-size: 27px 44px;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-    text-indent: -9999px;
-
-    left: 16px;
-    background: none;
     width: 40px;
     height: 40px;
     top: 30%;
+    left: 16px;
     margin-top: 0;
+    z-index: 10;
+    cursor: pointer;
+    background: none;
+    border: none;
+    text-indent: -9999px;
 
     &:after {
       position: absolute;
@@ -65,7 +55,6 @@
     -webkit-transform: rotate(-180deg);
     transform: rotate(-180deg);
   }
-
   .slick-dots {
     position: absolute;
     text-align: center;
@@ -115,20 +104,16 @@
   }
 
 }
-.our-cookies__inner {
-  //max-width: 1400px;
-  //margin: 0 auto;
-}
 .our-cookies__info {
   position: relative;
   z-index: 1;
-  //@include flexbox();
-  //@include flex-direction(row);
-  //@include align-items(center);
-  //@include justify-content(center);
-  padding: 30px 40px 74px;
+  max-width: 1400px;
+  margin: 0 auto;
   height: 100%;
 
+  >div {
+    padding: 30px 40px 74px;
+  }
   .btn {
     min-width: 216px;
   }
@@ -151,17 +136,6 @@
 
   .our-cookies {
     min-height: 650px;
-
-    .slick-list {
-      //overflow: visible;
-      //@include flexbox();
-      //@include flex-direction(row);
-      //@include align-items(center);
-      //@include justify-content(center);
-      //width: 100%;
-      //height: 100%;
-      //min-height: 700px;
-    }
 
     &.slides {
       opacity: 0;
@@ -271,7 +245,6 @@
       -webkit-transition: opacity 1s cubic-bezier(.08,.03,.22,.87) .6s,-webkit-transform .8s cubic-bezier(.08,.03,.22,.87) .6s;
       transition: transform .8s cubic-bezier(.08,.03,.22,.87) .6s,opacity 1s cubic-bezier(.08,.03,.22,.87) .6s;
     }
-
     .slick-dots {
       bottom: 20px;
       @include transform-translate( 0, -50% );
@@ -290,13 +263,15 @@
   .our-cookies__info {
     width: 100%;
     min-height: 700px;
-    padding: 83px 140px 100px 50%;
     text-align: left;
-
     @include flexbox();
     @include flex-direction(column);
     @include align-items(flex-start);
     @include justify-content(center);
+
+    >div {
+      padding: 83px 140px 100px 50%;
+    }
 
     .btn {
       opacity: 0;

@@ -19,7 +19,7 @@
             _window = $(window),
             _header = $('.site__header'),
             _globalWidth = 0,
-            _swiper = null,
+            _slickSlider = null,
             _dom =  $( 'html, body'),
             _btnDown = _obj.find('.hero__down');
 
@@ -68,22 +68,16 @@
             _init = function() {
                 _obj[ 0 ].obj = _self;
                 _addEvents();
-                _initSwiper();
+                _initSlick();
                 _setHeight();
             },
-            _initSwiper = function() {
+            _initSlick = function() {
 
-                _swiper = new Swiper( _obj.find('.swiper-container'), {
-                    pagination: '.swiper-pagination',
-                    paginationClickable: true,
-                    //effect: 'fade',
-                    autoplay: 5000,
-                    speed: 700,
-                    autoplayDisableOnInteraction: false,
-                    loop: true
-                    //fade: {
-                    //    crossFade: false
-                    //}
+                _slickSlider = _obj.find('.slick-container').slick( {
+                    dots: true,
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    arrows: false
                 } );
 
             },
@@ -93,14 +87,14 @@
 
                 if( _window.width() >= 1024 ) {
 
-                    _obj.css( {
+                    _obj.find('.slick-list').css( {
                         height: height - _header.innerHeight()
                     } );
 
 
                 } else {
 
-                    _obj.css( {
+                    _obj.find('.slick-list').css( {
                         height: height
                     } );
 

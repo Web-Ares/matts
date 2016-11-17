@@ -2,11 +2,14 @@
   position: relative;
   min-height: 440px;
 
-  .swiper-container {
+  .slick-container {
     width: 100%;
     height: 100%;
   }
-  .swiper-slide {
+  .slick-track {
+    height: 100%;
+  }
+  .slick-slide {
     text-align: center;
     @include flexbox();
     @include flex-direction(row);
@@ -16,31 +19,68 @@
     background-position: center;
     background-repeat: no-repeat;
 
-    &:after {
-      position: absolute;
-      left: 0;
-      top: 0;
+    >div {
+      position: relative;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.3);
-      content: '';
+
+      &:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.3);
+        content: '';
+      }
     }
 
-  }
-  .swiper-pagination {
-    bottom: 26.8%;
-    @include transform-translate( 0, -50% );
 
-    .swiper-pagination-bullet {
+  }
+  .slick-dots {
+    position: absolute;
+    text-align: center;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    z-index: 10;
+    bottom: 26.8%;
+    transform: translateX(0) translateY(-50%);
+    left: 0;
+    width: 100%;
+
+    li {
+      position: relative;
       opacity: 1;
       width: 8px;
       height: 8px;
       margin: 0 8px;
       border: 2px solid #ec1c2c;
       background: transparent;
-    }
-    .swiper-pagination-bullet-active {
-      background: #ec1c2c;
+      cursor: pointer;
+      display: inline-block;
+      border-radius: 100%;
+
+      &.slick-active {
+        background: #ec1c2c;
+      }
+
+      button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-indent: -9999px;
+        background: none;
+        border: none;
+      }
+
     }
 
   }
@@ -155,15 +195,16 @@
   .hero {
     min-height: 650px;
 
-    .swiper-pagination {
+    .slick-dots {
       bottom: 33%;
       @include transform-translate( 0, -50% );
 
-      .swiper-pagination-bullet {
+      li {
         width: 13px;
         height: 13px;
         margin: 0 15px;
         border: 4px solid #ec1c2c;
+
       }
 
     }

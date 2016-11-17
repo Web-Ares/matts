@@ -22,8 +22,8 @@
         var _self = this,
             _obj = obj,
             _window = $( window ),
-            _swiperInit = false,
-            _swiper;
+            _slickInit = false,
+            _slickSlider;
 
         var _addEvents = function () {
 
@@ -32,20 +32,20 @@
 
                         if( _window.width() < 768 ) {
 
-                            if( !_swiperInit ) {
+                            if( !_slickInit ) {
 
-                                _initSwiper();
-                                _swiperInit = true;
+                                _initSlick();
+                                _slickInit = true;
 
                             }
 
 
                         } else {
 
-                            if( _swiperInit ) {
+                            if( _slickInit ) {
 
-                                _destroySwiper();
-                                _swiperInit = false;
+                                _destroySlick();
+                                _slickInit = false;
                             }
 
                         }
@@ -55,21 +55,16 @@
                 } );
 
             },
-            _initSwiper = function() {
+            _initSlick = function() {
 
-                _swiper = new Swiper( _obj.find( '.swiper-container' ), {
-                    slidesPerView: 1,
-                    loop: true,
-                    autoplay: 3000,
-                    speed: 500,
-                    nextButton: _obj.find('.swiper-button-next'),
-                    prevButton:  _obj.find('.swiper-button-prev')
+                _slickSlider = _obj.find('.slick-container').slick( {
+                    dots: false
                 } );
 
             },
-            _destroySwiper = function() {
+            _destroySlick = function() {
 
-                _swiper.destroy( true, true);
+                _slickSlider.slick('unslick');
 
             },
             _init = function() {
@@ -78,10 +73,10 @@
 
                 if( _window.width() < 768 ) {
 
-                    if( !_swiperInit ) {
+                    if( !_slickInit ) {
 
-                        _initSwiper();
-                        _swiperInit = true;
+                        _initSlick();
+                        _slickInit = true;
                     }
 
                 }
