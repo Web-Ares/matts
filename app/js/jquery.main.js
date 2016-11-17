@@ -319,7 +319,7 @@
 
         var _self = this,
             _obj = obj,
-            _links = _obj.find('.site__menu-link'),
+            _links = _obj.find('.site__menu-link[data-href]'),
             _html = $('html'),
             _window = $(window),
             _dom =  $( 'html, body'),
@@ -331,12 +331,12 @@
                 _window.on( {
                     resize: function () {
 
-                        _changeActive();
+                        //_changeActive();
 
                     },
                     'scroll': function () {
 
-                        _changeActive();
+                        //_changeActive();
 
                     }
 
@@ -407,7 +407,7 @@
             _init = function() {
                 _obj[0].obj = _self;
                 _addEvents();
-                _changeActive();
+                //_changeActive();
             };
 
         _init();

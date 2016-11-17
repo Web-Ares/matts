@@ -62,7 +62,7 @@
                 _timer = setTimeout( function(){
 
                     _obj.css ({
-                        overflowY: 'auto'
+                        overflowY: 'scroll'
                     });
 
                     _obj.removeClass( 'popup_hide' );
