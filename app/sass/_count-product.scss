@@ -48,6 +48,9 @@
   }
 
 }
+.count-product_del {
+  margin: -1px 0 0;
+}
 
 @media (min-width: $desktop) {
 
@@ -71,6 +74,9 @@
       height: 40px;
     }
 
+  }
+  .count-product_del {
+    margin: -2px 0 0;
   }
 
 }

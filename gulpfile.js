@@ -52,8 +52,7 @@ var paths = {
         {
             dist: 'not-found.min.js',
             contains: [
-                'app/js/jquery.main.js',
-                'app/js/jquery.not-found.js'
+                'app/js/jquery.main.js'
             ]
         },
         {

@@ -8,6 +8,7 @@
   background-size: 315px 315px;
   color: #fff;
   padding: 40px 0;
+  min-height: calc( 100vh - 64px );
 
   >div {
     position: relative;
@@ -85,6 +86,7 @@
   .not-found {
     padding: 60px 0;
     background-size: 630px 630px;
+    min-height: calc( 100vh - 150px );
 
     >div {
 

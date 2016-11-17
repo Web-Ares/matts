@@ -5,7 +5,7 @@
 
         $.each( $( '.contact-us' ), function() {
 
-            new ContactHeight ( $( this ) );
+            //new ContactHeight ( $( this ) );
 
         } );
 

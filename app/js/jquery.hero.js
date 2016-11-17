@@ -30,6 +30,7 @@
                     load: function () {
 
                         _globalWidth = _window.width();
+                        _setHeight();
 
                     },
                     resize: function () {
@@ -69,14 +70,13 @@
                 _obj[ 0 ].obj = _self;
                 _addEvents();
                 _initSlick();
-                _setHeight();
             },
             _initSlick = function() {
 
                 _slickSlider = _obj.find('.slick-container').slick( {
                     dots: true,
-                    autoplay: true,
-                    autoplaySpeed: 5000,
+                    //autoplay: true,
+                    //autoplaySpeed: 5000,
                     arrows: false
                 } );
 
@@ -87,16 +87,37 @@
 
                 if( _window.width() >= 1024 ) {
 
-                    _obj.find('.slick-list').css( {
-                        height: height - _header.innerHeight()
-                    } );
+                    if( ( height - _header.innerHeight() ) > parseInt( _obj.css('min-height') ) ) {
+
+                        _obj.find('.slick-list').css( {
+                            height: height - _header.innerHeight()
+                        } );
+
+                    } else {
+
+                        _obj.find('.slick-list').css( {
+                            height: parseInt( _obj.css('min-height') )
+                        } );
+
+                    }
+
 
 
                 } else {
 
-                    _obj.find('.slick-list').css( {
-                        height: height
-                    } );
+                    if( height > parseInt( _obj.css('min-height') ) ) {
+
+                        _obj.find('.slick-list').css( {
+                            height: height
+                        } );
+
+                    } else {
+
+                        _obj.find('.slick-list').css( {
+                            height: parseInt( _obj.css('min-height') )
+                        } );
+
+                    }
 
                 }
 

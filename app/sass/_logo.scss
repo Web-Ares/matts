@@ -7,15 +7,20 @@
   height: 99px;
   -webkit-transform: translateX(-50%) translateZ(0);
   transform: translateX(-50%) translateZ(0);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  //-webkit-transition: all 0.3s ease;
+  //transition: all 0.3s ease;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 
-  >img {
+  >img,
+  > svg {
     display: block;
     width: 100%;
     height: auto;
+    path{
+      box-shadow: 0 0 0 10px rgba(0,0,0,0.6);
+    }
+
   }
 
 }

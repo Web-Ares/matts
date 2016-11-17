@@ -1,5 +1,5 @@
 .contact-us {
-  position: relative;
+  //position: relative;
   padding: 19px 15px 174px;
   margin: 0 auto;
   text-transform: uppercase;
@@ -41,6 +41,7 @@
 @media (min-width: $desktop) {
 
   .contact-us {
+    position: relative;
     max-width: 100%;
     padding: 62px 15px 54px;
     min-height: 582px !important;
@@ -83,6 +84,9 @@
     width: 50%;
     height: auto;
 
+  }
+  .site__content_centered {
+    display: block;
   }
 
 }

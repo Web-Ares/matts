@@ -207,14 +207,16 @@
                 } );
 
             },
-            _animatedAdding = function( event, elem ) {
+            _animatedAdding = function( event ) {
 
-                var pic = elem.data('image'),
+                var pic = $('.gallery__top .slick-current').data('image'),
 
                 e = event || window.event;
 
                 var pageX = e.pageX,
                     pageY = e.pageY;
+
+                console.log(pic);
 
                 $('body').append('<div class="site__product hidden"><img src="'+ pic +'" alt=""></div>');
                 $('.site__product').css( {
@@ -302,7 +304,7 @@
 
                             if( !( _cart.hasClass('cart_fill') ) ) {
 
-                                _animatedAdding( event, elem );
+                                _animatedAdding( event );
 
                                 setTimeout( function() {
 
