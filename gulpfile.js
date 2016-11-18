@@ -84,6 +84,12 @@ var paths = {
                 'app/js/jquery.checkout.js',
                 'app/js/jquery.websters-select.js'
             ]
+        },
+        {
+            dist: 'content.min.js',
+            contains: [
+                'app/js/jquery.main.js'
+            ]
         }
     ],
     vendorScripts: 'app/js/vendors/**/*.js',

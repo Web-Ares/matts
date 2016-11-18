@@ -196,8 +196,9 @@
 
                         if( !( _addToCartBtn.hasClass('adding') ) ) {
 
+                            _animatedAdding( event );
                             _requestProductAddToCart( event, $(this).parents('.product-single__info') );
-                            _addToCartBtn.addClass('adding')
+                            _addToCartBtn.addClass('adding');
 
                         }
 
@@ -285,7 +286,7 @@
 
 
             },
-            _requestProductAddToCart = function ( event, elem ) {
+            _requestProductAddToCart = function ( elem ) {
 
                 _request.abort();
                 _request = $.ajax( {
@@ -300,32 +301,25 @@
                     type: "get",
                     success: function (m) {
 
-                        if( parseInt(m.cartCountProducts) != parseInt(_cart.find('div').text()) ) {
+                        if( !( _cart.hasClass('cart_fill') ) ) {
 
-                            if( !( _cart.hasClass('cart_fill') ) ) {
+                            setTimeout( function() {
 
-                                _animatedAdding( event );
+                                _cart.append('<div></div>');
+                                _cart.addClass('cart_fill');
+                                $('.site__header').addClass('site__header_fill-cart');
 
                                 setTimeout( function() {
 
-                                    _cart.append('<div></div>');
-                                    _cart.addClass('cart_fill');
-                                    $('.site__header').addClass('site__header_fill-cart');
+                                    _cart.find('div').html(m.cartCountProducts);
 
-                                    setTimeout( function() {
+                                }, 100 );
 
-                                        _cart.find('div').html(m.cartCountProducts);
+                            }, 600 );
 
-                                    }, 100 );
+                        } else {
 
-                                }, 600 );
 
-                            }
-
-                        }
-                        else {
-
-                            _infoAdding();
 
                         }
 

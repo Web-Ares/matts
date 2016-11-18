@@ -1,6 +1,8 @@
 "use strict";
 ( function(){
 
+    var globalScrollFlag = true;
+
     $( function () {
 
         new Preloader( $('.preloader') );
@@ -11,7 +13,7 @@
 
         } );
 
-        $.each( $('.site__menu-nav_anchors'), function () {
+        $.each( $('[data-href]'), function () {
 
             new ScrollPanel( $(this) );
 
@@ -122,7 +124,7 @@
 
                         _action = _window.scrollTop() >= _obj.innerHeight() * 2;
 
-                        if( _window.scrollTop() >= _obj.innerHeight() ) {
+                        if( _window.scrollTop() >= _obj.innerHeight()+ 20 ) {
 
                             if( _flagHide ) {
 
@@ -157,6 +159,14 @@
                         } else if ( _window.scrollTop() <= _obj.innerHeight() * 3 ) {
 
                             _obj.removeClass( 'site__header_fixed' );
+                            _obj.removeClass( 'site__header_hidden' );
+
+                        }
+
+                        if( _window.scrollTop() <= 10 ) {
+
+                            _obj.removeClass( 'site__header_fixed' );
+                            _obj.removeClass( 'site__header_hidden' );
 
                         }
 
@@ -280,7 +290,7 @@
 
                 }
 
-                if( direction < 0 && _obj.hasClass( 'site__header_hidden' ) && !_showMenuBtn.hasClass( 'opened' )  && _action && _action2 ){
+                if( direction < 0 && _obj.hasClass( 'site__header_hidden' ) && !_showMenuBtn.hasClass( 'opened' )  && _action && _action2 && globalScrollFlag ){
 
                     _obj.removeClass('site__header_hidden');
 
@@ -319,7 +329,7 @@
 
         var _self = this,
             _obj = obj,
-            _links = _obj.find('.site__menu-link[data-href]'),
+            _links = _obj,
             _html = $('html'),
             _window = $(window),
             _dom =  $( 'html, body'),
@@ -351,17 +361,31 @@
                         _links.removeClass('active');
                         curItem.addClass('active');
 
-                        if( _window.width() >= 1024 ) {
+                        nextItemTop = $( '.' + newClass  ).offset().top;
 
-                            nextItemTop = $( '.' + newClass  ).offset().top - 91;
 
-                        } else {
-
-                            nextItemTop = $( '.' + newClass  ).offset().top - 64;
-
-                        }
                         _dom.stop( true, false );
-                        _dom.animate( { scrollTop: nextItemTop  }, 300 );
+                        _dom.animate( {
+                            scrollTop: nextItemTop
+
+                        }, {
+                            duration: 500,
+                            progress: function () {
+                                globalScrollFlag = false;
+                                _header.addClass( 'site__header_hidden' );
+                            },
+                            complete: function () {
+
+                                setTimeout( function() {
+                                    globalScrollFlag = false;
+                                }, 200 );
+
+                                setTimeout( function() {
+                                    globalScrollFlag = true
+                                }, 500 );
+
+                            }
+                        });
 
                         _html.css( {
                             overflowY: 'auto'

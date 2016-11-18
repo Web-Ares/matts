@@ -105,11 +105,10 @@
         }
     </style>
 
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/content-page.css">
 
 </head>
-<body data-action="php/products-cart.php">
+<body>
 
     <!-- site -->
     <div class="site site_inner">
@@ -128,7 +127,7 @@
         <!-- /preloader -->
 
         <!-- site__header -->
-        <header class="site__header">
+        <header class="site__header site__header_fill-cart">
 
             <!-- site__header-layout -->
             <div class="site__header-layout">
@@ -138,8 +137,9 @@
                 </a>
 
                 <!-- cart -->
-                <a href="#" class="cart">
+                <a href="#" class="cart cart_fill">
                     <span></span>
+                    <div>2 items</div>
                 </a>
                 <!-- /cart -->
 
@@ -239,83 +239,84 @@
         <!-- site__content -->
         <div class="site__content">
 
-            <h1 class="site__main-title site__main-title_2">Shop</h1>
+            <h1 class="site__main-title site__main-title_2">content</h1>
 
-            <!-- product-single -->
-            <div class="product-single">
+            <!-- content -->
+            <div class="content">
 
-                <!-- product-single__layout -->
-                <div class="product-single__layout">
+                <h1>Title (h1)</h1>
+                <h2>Title (h2)</h2>
+                <h3>Title (h3)</h3>
+                <h4>Title (h4)</h4>
+                <h5>Title (h5)</h5>
+                <h6>Title (h6)</h6>
 
-                    <!-- product-single__info -->
-                    <div class="product-single__info" data-id="1">
+                <p><img class="alignleft" src="pic/products1.jpg" width="208" height="188" />
+                    Lorem <a href="#">ipsum</a> dolor sit amet, consectetur adipisicing elit. Aperiam culpa, distinctio dolores est ipsa iusto odit sed similique veniam. Aliquid earum facere facilis mollitia optio, reiciendis unde. Esse, hic, molestias.
+                </p>
+                <p><img class="alignright" src="pic/products1.jpg" width="208" height="188" />
+                    Lorem <a href="#">ipsum</a> dolor sit amet, consectetur adipisicing elit. Aperiam culpa, distinctio dolores est ipsa iusto odit sed similique veniam. Aliquid earum facere facilis mollitia optio, reiciendis unde. Esse, hic, molestias.
+                </p>
 
-                        <h2 class="site__title site__title_2">CHOCOLATE CHIP</h2>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae corporis cum cumque eius facere ipsum laborum nisi praesentium, provident qui sequi soluta tenetur unde voluptates. Aliquid beatae doloremque quisquam?</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae corporis cum cumque eius facere ipsum laborum nisi praesentium, provident qui sequi soluta tenetur unde voluptates. Aliquid beatae doloremque quisquam?
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae corporis cum cumque eius facere ipsum laborum nisi praesentium, provident qui sequi soluta tenetur unde voluptates. Aliquid beatae doloremque quisquam?</li>
 
-                        <!-- product-single__price -->
-                        <span class="product-single__price">$3.75</span>
-                        <!-- /product-single__price -->
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae corporis cum cumque eius facere ipsum laborum nisi praesentium, provident qui sequi soluta tenetur unde voluptates. Aliquid beatae doloremque quisquam?</li>
+                        </ul>
+                    </li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae corporis cum cumque eius facere ipsum laborum nisi praesentium, provident qui sequi soluta tenetur unde voluptates. Aliquid beatae doloremque quisquam?</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae corporis cum cumque eius facere ipsum laborum nisi praesentium, provident qui sequi soluta tenetur unde voluptates. Aliquid beatae doloremque quisquam?</li>
 
-                        <!-- product-single__gallery -->
-                        <div class="product-single__gallery">
+                </ul>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae corporis cum cumque eius facere ipsum laborum nisi praesentium, provident qui sequi soluta tenetur unde voluptates. Aliquid beatae doloremque quisquam?</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae corporis cum cumque eius facere ipsum laborum nisi praesentium, provident qui sequi soluta tenetur unde voluptates. Aliquid beatae doloremque quisquam?
+                        <ol>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae corporis cum cumque eius facere ipsum laborum nisi praesentium, provident qui sequi soluta tenetur unde voluptates. Aliquid beatae doloremque quisquam?</li>
 
-                            <!-- swiper-container -->
-                            <div class="swiper-container gallery__top">
-                                <div class="slick-container__slide" style="background-image:url(pic/products-gallery-pic1.jpg)"></div>
-                                <div class="slick-container__slide" style="background-image:url(pic/products1.jpg)"></div>
-                            </div>
-                            <!-- /swiper-container -->
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae corporis cum cumque eius facere ipsum laborum nisi praesentium, provident qui sequi soluta tenetur unde voluptates. Aliquid beatae doloremque quisquam?</li>
+                        </ol>
+                    </li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae corporis cum cumque eius facere ipsum laborum nisi praesentium, provident qui sequi soluta tenetur unde voluptates. Aliquid beatae doloremque quisquam?</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae corporis cum cumque eius facere ipsum laborum nisi praesentium, provident qui sequi soluta tenetur unde voluptates. Aliquid beatae doloremque quisquam?</li>
 
-                            <!-- swiper-container -->
-                            <div class="swiper-container gallery__thumbs">
-                                <div class="slick-container__slide" style="background-image:url(pic/products-gallery-pic1.jpg)"></div>
-                                <div class="slick-container__slide" style="background-image:url(pic/products1.jpg)"></div>
-                            </div>
-                            <!-- /swiper-container -->
+                </ol>
 
-                        </div>
-                        <!-- /product-single__gallery -->
+                <dl>
+                    <dt>Elem</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae corporis cum cumque eius facere ipsum laborum nisi praesentium, provident qui sequi soluta tenetur unde voluptates. Aliquid beatae doloremque quisquam?</dd>
+                    <dt>Elem</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae corporis cum cumque eius facere ipsum laborum nisi praesentium, provident qui sequi soluta tenetur unde voluptates. Aliquid beatae doloremque quisquam?</dd>
+                </dl>
 
-                        <!-- product-single__items -->
-                        <div class="product-single__items">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Caption 1</th>
+                        <th>Caption 2</th>
+                        <th>Caption 3</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Cell 1</td>
+                        <td>Cell 2</td>
+                        <td>Cell 3</td>
+                    </tr>
+                    <tr>
+                        <td>Cell 4</td>
+                        <td>Cell 5</td>
+                        <td>Cell 6</td>
+                    </tr>
+                    </tbody>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et  ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit voluptate velit esse.</p>
-                            <a href="#" class="product-single__show popup__open" data-popup="ingredients-info">Show Nutrition Information and Ingredients</a>
-
-                            <!-- product-single__quantity -->
-                            <div class="product-single__quantity">
-                                <form action="#">
-                                    <span>Q-ty</span>
-
-                                    <!-- product-single__quantity-change -->
-                                    <div class="count-product product-single__quantity-change">
-                                        <a class="count-product__btn count-product_del" href="#"><span>-</span></a>
-                                        <input type="number" class="count-product__input site__input" value="1">
-                                        <a class="count-product__btn count-product_add" href="#"><span>+</span></a>
-                                    </div>
-                                    <!-- /product-single__quantity-change -->
-
-                                    <span>PACKAGES, 12OZ</span>
-
-                                    <div>
-                                        <button type="submit" class="btn product-single__add"><span>ADD TO CART</span></button>
-                                    </div>
-
-                                </form>
-                            </div>
-                            <!-- /product-single__quantity -->
-
-                        </div>
-                        <!-- /product-single__items -->
-
-                    </div>
-                    <!-- /product-single__info -->
-
-                </div>
-                <!-- /product-single__layout -->
+                </table>
 
             </div>
-            <!-- /product-single -->
+            <!-- content -->
 
         </div>
         <!-- /site__content -->
@@ -499,55 +500,7 @@
     </div>
     <!-- /site -->
 
-    <!-- popup -->
-    <div class="popup">
-
-        <!-- popup__wrap -->
-        <div class="popup__wrap">
-
-            <!-- popup__content -->
-            <div class="popup__content popup__ingredients-info">
-
-                <!-- popup__close -->
-                <div class="popup__close">
-
-                </div>
-                <!-- /popup__close -->
-
-                <!-- nutrition-facts -->
-                <div class="nutrition-facts">
-
-                    <h2 class="site__main-title site__main-title_3">INGREDIENTS & NUTRITION INFORMATION</h2>
-
-                    <!-- nutrition-facts__description -->
-                    <div class="nutrition-facts__description">
-                        <h2 class="site__title site__title_3">CHOCOLATE CHIP</h2>
-                        <div class="nutrition-facts__pic">
-                            <img src="pic/nutritions-facts.jpg" width="290" height="553" alt="">
-                        </div>
-                        <p>INGREDIENTS: Unbleached Wheat Flour, Chocolate Chips (Sugar, Chocolate Liquor, Cocoa Butter, Soy Lecithin), Baking Oil (Palm, Soybean, Canola Oil), Brown Sugar, Invert Sugar, Date Paste (Dates, Water), Eggs, Sugar, Baking Soda, Water, Salt, CarameleColor, Apple Fiber, Vanilla</p>
-                        <p>CONTAINS: EGGS, WHEAT This product is manufactured on equipment that is used for manufacturing products containing Peanuts, Tree Nuts, and Eggs.</p>
-                        <div class="nutrition-facts__learn">
-                            <a href="#">Learn more about our quality ingredients</a>
-                        </div>
-                    </div>
-                    <!-- /nutrition-facts__description -->
-
-                </div>
-                <!-- /nutrition-facts -->
-
-            </div>
-            <!-- /popup__content -->
-
-        </div>
-        <!-- /popup__wrap -->
-
-    </div>
-    <!-- /popup -->
-
-
     <script src="js/vendors/jquery-2.2.1.min.js"></script>
-    <script src="js/vendors/slick.min.js"></script>
-    <script src="js/single-product.min.js"></script>
+    <script src="js/content.min.js"></script>
 </body>
 </html>

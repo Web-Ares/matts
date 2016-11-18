@@ -50,7 +50,7 @@
     margin-right: auto;
   }
   .slick-list {
-    padding: 0 !important;
+    padding: 0 3px !important;
   }
   .slick-container__slide {
     background-size: contain;
@@ -68,13 +68,14 @@
 
   }
   .gallery__thumbs {
+    padding: 0 5px;
     width: 155px;
     height: 78px;
     box-sizing: border-box;
     margin: 18px auto 0;
 
     .slick-container__slide {
-      width: 49% !important;
+      //width: 49% !important;
       height: 78px;
       opacity: 0.4;
       cursor: pointer;

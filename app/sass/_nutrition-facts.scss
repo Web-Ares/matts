@@ -14,6 +14,75 @@
   .site__title_3 {
     text-align: center;
   }
+  ul {
+    clear: both;
+    margin: 0 0 35px 0;
+
+    li {
+      position: relative;
+      margin-bottom: 15px;
+      padding: 0 0 0 15px;
+
+      &:after {
+        position: absolute;
+        left: 0;
+        top: 4px;
+        width: 6px;
+        height: 6px;
+        border-radius: 6px;
+        background: #ec0928;
+        content: '';
+      }
+
+    }
+
+    ul {
+      margin: 10px 0 10px 25px;
+    }
+
+  }
+  ol {
+    clear: both;
+    margin: 0 0 35px 0;
+    counter-reset: list;
+
+    li {
+      position: relative;
+      margin-bottom: 15px;
+      padding: 0 0 0 15px;
+
+      &:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #ec0928;
+        counter-increment: list;
+        content: counter(list) ". ";
+      }
+
+    }
+
+    ol {
+      margin: 10px 0 10px 25px;
+    }
+
+  }
+  dl {
+    margin: 0 0 35px 0;
+
+    dt {
+      @include main-font4();
+      margin-bottom: 2px;
+      color: #ec0928;
+    }
+    dd {
+      margin-bottom: 25px;
+    }
+
+  }
+  strong {
+    @include main-font4();
+  }
 
 }
 .nutrition-facts__description {
@@ -68,6 +137,31 @@
     .site__title_3 {
       text-align: left;
     }
+
+    ul {
+
+      li {
+        padding: 0 0 0 30px;
+
+        &:after {
+          top: 6px;
+          width: 10px;
+          height: 10px;
+          border-radius: 10px;
+        }
+
+      }
+
+    }
+
+    ol {
+
+      li {
+        padding: 0 0 0 30px;
+      }
+
+    }
+
   }
   .nutrition-facts__description {
     min-height: 700px;
