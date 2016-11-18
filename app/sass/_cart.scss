@@ -67,6 +67,11 @@
   .cart_fill {
     right: 10px;
     padding: 0 20px 0 7px;
+    background: #9e0b0f;
+
+    >span {
+      background-image: url('../img/cart-fill.png');
+    }
 
     &:hover {
       background-color: #7a222e;
