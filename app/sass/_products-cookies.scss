@@ -180,6 +180,18 @@
   .products-cookies {
     padding: 60px 0 0;
 
+    .site__main-title {
+      opacity: 0;
+      &.slides {
+
+        -webkit-transition: opacity 0.3s ease,  -webkit-transform 0.3s ease;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      &.slides_active {
+        opacity: 1;
+      }
+
+    }
     .slick-container {
 
       > div,
@@ -191,10 +203,7 @@
 
     }
 
-    &.slides {
-      opacity: 0;
-      -webkit-transition: opacity 0.3s ease,  -webkit-transform 0.3s ease;
-      transition: opacity 0.3s ease, transform 0.3s ease;
+    .slides {
 
       .slick-slide {
         opacity: 0;
@@ -212,8 +221,7 @@
       }
 
     }
-    &.slides_active {
-      opacity: 1;
+    .slides_active {
 
       .slick-slide {
         opacity: 1;
@@ -231,5 +239,6 @@
     width: 224px;
     height: 204px;
   }
+
 
 }

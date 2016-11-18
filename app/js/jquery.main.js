@@ -31,6 +31,12 @@
 
         } );
 
+        $.each( $('.site_index'), function () {
+
+            new ScrollToHash( $(this) );
+
+        } );
+
     } );
 
     var Preloader = function (obj) {
@@ -447,12 +453,16 @@
         //private methods
         var _addEvents = function () {
                 _window.on({
+                    load: function() {
+                        _checkScroll();
+                    },
                     scroll: function () {
                         _checkScroll();
                     }
                 });
             },
             _checkScroll = function(){
+
                 var curScroll = _window.scrollTop(),
                     windowH = _window.height(),
                     topPos = _obj.offset().top,
@@ -469,7 +479,7 @@
             _init = function () {
                 _obj[0].slides = _self;
                 _addEvents();
-                _checkScroll();
+
             };
 
         //public properties
@@ -549,6 +559,54 @@
 
                 }
 
+            };
+
+        _init();
+    };
+
+    var ScrollToHash = function ( obj ) {
+
+        var _self = this,
+            _obj = obj,
+            _window = $(window),
+            _dom =  $('html, body');
+
+        var _addEvents = function () {
+
+                _window.on( {
+                    load: function () {
+
+                        setTimeout( function() {
+
+                            _scrollTo();
+
+                        }, 100 );
+
+                    }
+
+                } );
+
+            },
+            _scrollTo = function() {
+
+                var hash = window.location.hash.replace('#', '');
+
+                if( hash ) {
+
+                    var elem = $( '.' + window.location.hash.replace('#', '') );
+
+                    if( elem.length ) {
+
+                        window.scrollTo( 0, parseInt( elem.offset().top ) );
+
+                    }
+
+                }
+
+            },
+            _init = function() {
+                _obj[0].obj = _self;
+                _addEvents();
             };
 
         _init();

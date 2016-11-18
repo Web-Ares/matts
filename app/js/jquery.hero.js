@@ -1,6 +1,8 @@
 "use strict";
 ( function(){
 
+    var globalScrollFlag = true;
+
     $( function () {
 
         $.each( $( '.hero' ), function() {
@@ -21,7 +23,7 @@
             _globalWidth = 0,
             _slickSlider = null,
             _dom =  $( 'html, body'),
-            _btnDown = _obj.find('.hero__down');
+            _btnDown = _obj.find('.hero__down, .btn');
 
         //private methods
         var _addEvents = function() {
@@ -48,19 +50,30 @@
                 _btnDown.on( {
                     click: function () {
 
-                        if( _window.width() >= 1024 ) {
+                        _dom.stop( true, false );
+                        _dom.animate( {
+                            scrollTop: $('.our-cookies').offset().top
 
-                            _dom.stop( true, false );
-                            _dom.animate( { scrollTop: $('.our-cookies').offset().top - 91  }, 300 );
+                        }, {
+                            duration: 500,
+                            progress: function () {
+                                globalScrollFlag = false;
+                                _header.addClass( 'site__header_hidden' );
+                            },
+                            complete: function () {
 
-                        } else {
+                                setTimeout( function() {
+                                    globalScrollFlag = false;
+                                }, 200 );
 
-                            _dom.stop( true, false );
-                            _dom.animate( { scrollTop: $('.our-cookies').offset().top - 64  }, 300 );
+                                setTimeout( function() {
+                                    globalScrollFlag = true
+                                }, 500 );
 
-                        }
+                            }
+                        });
 
-                       return false;
+                        return false;
 
                     }
                 } );
