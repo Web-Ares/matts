@@ -291,6 +291,7 @@
                 _request = $.ajax( {
                     url: $('body').attr('data-action'),
                     data: {
+                        action: 'single_add_product',
                         id: elem.attr('data-id'),
                         countProduct: _input.val(),
                         price: _price.text(),
@@ -302,25 +303,25 @@
 
                         if( parseInt(m.cartCountProducts) != parseInt(_cart.find('div').text()) ) {
 
-                            if( !( _cart.hasClass('cart_fill') ) ) {
-
                                 _animatedAdding( event );
 
                                 setTimeout( function() {
-
-                                    _cart.append('<div></div>');
+                                    if( !( _cart.hasClass('cart_fill') ) ) {
+                                    _cart.append('<div></div>'); 
+                                    }
                                     _cart.addClass('cart_fill');
                                     $('.site__header').addClass('site__header_fill-cart');
 
                                     setTimeout( function() {
 
                                         _cart.find('div').html(m.cartCountProducts);
-
+                                      
+                                        
                                     }, 100 );
 
                                 }, 600 );
 
-                            }
+                            
 
                         }
                         else {
