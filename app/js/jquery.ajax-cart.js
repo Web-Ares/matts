@@ -219,7 +219,7 @@
 
                 console.log(pic);
 
-                $('body').append('<div class="site__product hidden"><img src="'+ pic +'" alt=""></div>');
+                $('body').append('<div class="site__product hidden" style="background-image: '+ pic +'"></div>');
                 $('.site__product').css( {
                     top: $('.gallery__top').offset().top + $('.gallery__top').innerHeight()/2 - $('.site__product').height()/2 ,
                     left: $('.gallery__top').offset().left + $('.gallery__top').innerWidth()/2 - $('.site__product').width()/2
@@ -248,41 +248,6 @@
                     _addToCartBtn.removeClass('adding');
 
                 }, 700 );
-
-
-            },
-            _infoAdding = function() {
-
-                var itemText = '';
-
-                if( parseInt( _input.val() ) == 1 ) {
-
-                    itemText = ' item';
-
-                } else {
-
-                    itemText = ' items';
-
-                }
-
-                $('.product-single').append('<div class="product-single__info-message hidden">'+ _input.val() + itemText +' added to cart</div>');
-                $('.product-single__info-message ').css( {
-                    top: _addToCartBtn.offset().top + _addToCartBtn.innerHeight() + 10,
-                    left: _addToCartBtn.offset().left
-                } );
-
-                setTimeout( function() {
-
-                    $('.product-single__info-message').addClass('visible');
-
-                }, 200 );
-
-                setTimeout( function() {
-
-                    $('.product-single__info-message').remove();
-                    _addToCartBtn.removeClass('adding');
-
-                }, 3000 );
 
 
             },
@@ -319,7 +284,11 @@
 
                         } else {
 
+                            setTimeout( function() {
 
+                                _cart.find('div').html(m.cartCountProducts);
+
+                            }, 700 );
 
                         }
 
