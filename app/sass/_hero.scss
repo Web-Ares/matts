@@ -88,6 +88,13 @@
 
   }
 
+  .btn {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    @include transform-translate( -50%,  0 );
+  }
+
 }
 .hero__info {
   position: relative;
@@ -98,14 +105,6 @@
   @include justify-content(center);
   padding: 100px 20px 136px;
   height: 100%;
-
-  .btn {
-    position: absolute;
-    bottom: 80px;
-    left: 50%;
-    @include transform-translate( -50%,  0 );
-  }
-
 }
 .hero__title {
   font-size: 54px;
@@ -212,6 +211,10 @@
 
     }
 
+    .btn {
+      bottom: 119px;
+    }
+
   }
   .hero__title {
     font-size: 100px;
@@ -219,11 +222,6 @@
   }
   .hero__info {
     padding: 10.5% 20px 19%;
-
-    .btn {
-      bottom: 119px;
-    }
-
   }
   .hero__down {
     bottom: 32px;

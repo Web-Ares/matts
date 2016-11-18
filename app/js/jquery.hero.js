@@ -75,8 +75,8 @@
 
                 _slickSlider = _obj.find('.slick-container').slick( {
                     dots: true,
-                    //autoplay: true,
-                    //autoplaySpeed: 5000,
+                    autoplay: true,
+                    autoplaySpeed: 5000,
                     arrows: false
                 } );
 
