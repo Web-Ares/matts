@@ -24,7 +24,7 @@ if($flag == 'remove'){
     $price = $_GET['price'];
 
     $json_data = '{
-        "cartCountProducts": "1 item"
+        "cartCountProducts": "2 item"
     }';
 
 }
