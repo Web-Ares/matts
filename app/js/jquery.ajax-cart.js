@@ -94,7 +94,8 @@
                 _request = $.ajax( {
                     url: $('body').attr('data-action'),
                     data: {
-                        id: elem.attr('data-id'),
+                        action: 'remove_cart_item',
+                        id: elem.attr('data-product-key'),
                         flag: 'remove'
                     },
                     dataType: 'json',
@@ -131,14 +132,16 @@
                 _request = $.ajax( {
                     url: $('body').attr('data-action'),
                     data: {
-                        id: elem.attr('data-id'),
+                        action: 'cart_quantity_changes',
+                        id: elem.attr('data-product-id'),
+                        key: elem.attr('data-product-key'),
                         countProduct: elem.find('.count-product__input').val(),
                         flag: 'changeCount'
                     },
                     dataType: 'json',
                     type: "get",
                     success: function (m) {
-
+                   
                         elem.find('.my-cart__total-price').html( m.total );
                         _totalPrice.find('span').html( m.subtotal );
 
