@@ -308,6 +308,7 @@
                 _request = $.ajax( {
                     url: $('body').attr('data-action'),
                     data: {
+                        action: 'single_add_product',
                         id: elem.attr('data-id'),
                         countProduct: _input.val(),
                         price: _price.text(),
@@ -316,10 +317,11 @@
                     dataType: 'json',
                     type: "get",
                     success: function (m) {
-
+                        
                         if ( parseInt( m.cartCountProducts ) != newCount ) {
 
                             _cart.find('div').html( m.cartCountProducts );
+                           
 
                         }
 
