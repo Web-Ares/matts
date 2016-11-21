@@ -15,6 +15,12 @@
 
         } );
 
+        $.each( $('.my-cart__promo-code'), function () {
+
+            new AddCouponToCart( $(this) );
+
+        } );
+
     } );
 
     var ProductsInCart = function (obj) {
@@ -337,6 +343,72 @@
                                 _cart.find('div').html( oldCount + 'items' );
 
                             }
+
+                        }
+                    }
+                } );
+
+            },
+            _init = function () {
+                _obj[0].obj = _self;
+                _addEvents();
+            };
+
+        //public properties
+
+        //public methods
+
+
+        _init();
+    };
+
+    var AddCouponToCart = function (obj) {
+
+        //private properties
+        var _self = this,
+            _obj = obj,
+            _applyButton = obj.find('button'),
+            _request = new XMLHttpRequest();
+
+        //private methods
+        var _addEvents = function () {
+
+                _applyButton.on( {
+                    click: function ( event ) {
+
+                        if(_obj.find('#promo-code').val()){
+                            _requestProductAddToCart( _obj );
+                        } else {
+                            console.log('empty code');
+                        }
+
+
+                        return false;
+
+                    }
+                } );
+
+            },
+            _requestProductAddToCart = function ( elem ) {
+
+                _request.abort();
+                _request = $.ajax( {
+                    url: $('body').attr('data-action'),
+                    data: {
+                        action: 'apply_coupon_to_order',
+                        coupon_name: elem.find('#promo-code').val()
+                    },
+                    dataType: 'json',
+                    type: "get",
+                    success: function (m) {
+
+                        console.log(m);
+
+                    },
+                    error: function ( XMLHttpRequest, m ) {
+                        if ( XMLHttpRequest.statusText != "abort" ) {
+
+                            console.log('error');
 
                         }
                     }
