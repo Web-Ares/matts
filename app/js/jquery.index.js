@@ -9,6 +9,8 @@
 
         } );
 
+        $('#wpsl-stores ').perfectScrollbar();
+
     } );
 
     var ScrollTop = function( obj ) {

@@ -20,18 +20,6 @@
 
         var _addEvents = function () {
 
-                _window.on( {
-                    resize: function() {
-
-                        if( _window.width() < 1024 ) {
-
-
-
-                        }
-
-                    }
-                } );
-
                 _obj.on( {
                     click: function() {
 

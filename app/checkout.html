@@ -250,95 +250,10 @@
 
                     <form action="#">
 
-                        <h2 class="checkout__title">your SHIPING info</h2>
+                        <!-- checkout__form -->
+                        <div class="checkout__form">
 
-                        <!-- checkout__info -->
-                        <div class="checkout__info">
-                            <div>
-
-                                <!-- checkout__fields -->
-                                <fieldset class="checkout__fields">
-                                    <div>
-                                        <label class="site__label" for="first-name">FIRST NAME</label>
-                                    </div>
-                                    <div>
-                                        <input class="site__input" type="text" id="first-name" name="first-name">
-                                    </div>
-                                </fieldset>
-                                <!-- /checkout__fields -->
-
-                                <!-- checkout__fields -->
-                                <fieldset class="checkout__fields">
-                                    <div><label class="site__label" for="last-name">LAST NAME</label></div>
-                                    <div><input class="site__input" type="text" id="last-name" name="last-name"></div>
-                                </fieldset>
-                                <!-- /checkout__fields -->
-
-                                <!-- checkout__fields -->
-                                <fieldset class="checkout__fields">
-                                    <div><label class="site__label" for="email">E-MAIL</label></div>
-                                    <div><input class="site__input" type="email" id="email" name="email"></div>
-                                </fieldset>
-                                <!-- /checkout__fields -->
-
-                                <!-- checkout__fields -->
-                                <fieldset class="checkout__fields">
-                                    <div> <label class="site__label" for="phone">PHONE</label></div>
-                                    <div><input class="site__input" type="tel" id="phone" name="phone"></div>
-                                </fieldset>
-                                <!-- /checkout__fields -->
-                                
-                            </div>
-                            <div>
-
-                                <!-- checkout__fields -->
-                                <fieldset class="checkout__fields">
-                                    <div><label class="site__label" for="address1">ADDRESS</label></div>
-                                    <div><input class="site__input" type="text" id="address1" name="address1"></div>
-                                </fieldset>
-                                <!-- /checkout__fields -->
-
-                                <!-- checkout__fields -->
-                                <fieldset class="checkout__fields">
-                                    <div><label class="site__label" for="address2">ADDRESS</label></div>
-                                    <div><input class="site__input" type="text" id="address2" name="address2"></div>
-                                </fieldset>
-                                <!-- /checkout__fields -->
-
-                                <!-- checkout__fields -->
-                                <fieldset class="checkout__fields">
-                                    <div><label class="site__label" for="city">CITY & STATE</label></div>
-                                    <div class="checkout__fields__two">
-                                        <div>
-
-                                            <input class="site__input" type="text" id="city" name="city">
-                                            <select name="state" id="state">
-                                                <option value="0">State1</option>
-                                                <option value="1">State2</option>
-                                                <option value="2">State3</option>
-                                                <option value="3">State4</option>
-                                            </select>
-
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <!-- /checkout__fields -->
-
-                                <!-- checkout__fields -->
-                                <fieldset class="checkout__fields checkout__fields_zip">
-                                    <div><label class="site__label" for="zip">ZIP</label></div>
-                                    <div><input class="site__input" type="text" id="zip" name="zip"></div>
-                                </fieldset>
-                                <!-- /checkout__fields -->
-
-                            </div>
-                        </div>
-                        <!-- /checkout__info -->
-
-                        <h2 class="checkout__title">your BILLING info</h2>
-
-                        <!-- checkout__info-billing -->
-                        <div class="checkout__info-billing">
+                            <h2 class="checkout__title">your SHIPING info</h2>
 
                             <!-- checkout__info -->
                             <div class="checkout__info">
@@ -347,32 +262,32 @@
                                     <!-- checkout__fields -->
                                     <fieldset class="checkout__fields">
                                         <div>
-                                            <label class="site__label" for="first-name1">FIRST NAME</label>
+                                            <label class="site__label" for="first-name">FIRST NAME</label>
                                         </div>
                                         <div>
-                                            <input class="site__input" type="text" id="first-name1" name="first-name1">
+                                            <input class="site__input" data-required type="text" id="first-name" name="first-name">
                                         </div>
                                     </fieldset>
                                     <!-- /checkout__fields -->
 
                                     <!-- checkout__fields -->
                                     <fieldset class="checkout__fields">
-                                        <div><label class="site__label" for="last-name1">LAST NAME</label></div>
-                                        <div><input class="site__input" type="text" id="last-name1" name="last-name1"></div>
+                                        <div><label class="site__label" for="last-name">LAST NAME</label></div>
+                                        <div><input class="site__input" data-required type="text" id="last-name" name="last-name"></div>
                                     </fieldset>
                                     <!-- /checkout__fields -->
 
                                     <!-- checkout__fields -->
                                     <fieldset class="checkout__fields">
-                                        <div><label class="site__label" for="email1">E-MAIL</label></div>
-                                        <div><input class="site__input" type="email" id="email1" name="email1"></div>
+                                        <div><label class="site__label" for="email">E-MAIL</label></div>
+                                        <div><input class="site__input" data-required type="email" id="email" name="email"></div>
                                     </fieldset>
                                     <!-- /checkout__fields -->
 
                                     <!-- checkout__fields -->
                                     <fieldset class="checkout__fields">
-                                        <div> <label class="site__label" for="phone1">PHONE</label></div>
-                                        <div><input class="site__input" type="tel" id="phone1" name="phone1"></div>
+                                        <div> <label class="site__label" for="phone">PHONE</label></div>
+                                        <div><input class="site__input" data-required type="tel" id="phone" name="phone"></div>
                                     </fieldset>
                                     <!-- /checkout__fields -->
 
@@ -381,26 +296,26 @@
 
                                     <!-- checkout__fields -->
                                     <fieldset class="checkout__fields">
+                                        <div><label class="site__label" for="address1">ADDRESS</label></div>
+                                        <div><input class="site__input" data-required type="text" id="address1" name="address1"></div>
+                                    </fieldset>
+                                    <!-- /checkout__fields -->
+
+                                    <!-- checkout__fields -->
+                                    <fieldset class="checkout__fields">
                                         <div><label class="site__label" for="address2">ADDRESS</label></div>
-                                        <div><input class="site__input" type="text" id="address3" name="address3"></div>
+                                        <div><input class="site__input" data-required type="text" id="address2" name="address2"></div>
                                     </fieldset>
                                     <!-- /checkout__fields -->
 
                                     <!-- checkout__fields -->
                                     <fieldset class="checkout__fields">
-                                        <div><label class="site__label" for="address3">ADDRESS</label></div>
-                                        <div><input class="site__input" type="text" id="address4" name="address4"></div>
-                                    </fieldset>
-                                    <!-- /checkout__fields -->
-
-                                    <!-- checkout__fields -->
-                                    <fieldset class="checkout__fields">
-                                        <div><label class="site__label" for="city1">CITY & STATE</label></div>
+                                        <div><label class="site__label" for="city">CITY & STATE</label></div>
                                         <div class="checkout__fields__two">
                                             <div>
 
-                                                <input class="site__input" type="text" id="city1" name="city1">
-                                                <select name="state1" id="state1">
+                                                <input class="site__input" data-required type="text" id="city" name="city">
+                                                <select name="state" id="state">
                                                     <option value="0">State1</option>
                                                     <option value="1">State2</option>
                                                     <option value="2">State3</option>
@@ -414,8 +329,8 @@
 
                                     <!-- checkout__fields -->
                                     <fieldset class="checkout__fields checkout__fields_zip">
-                                        <div><label class="site__label" for="zip1">ZIP</label></div>
-                                        <div><input class="site__input" type="text" id="zip1" name="zip1"></div>
+                                        <div><label class="site__label" for="zip">ZIP</label></div>
+                                        <div><input class="site__input" data-required type="text" id="zip" name="zip"></div>
                                     </fieldset>
                                     <!-- /checkout__fields -->
 
@@ -423,21 +338,164 @@
                             </div>
                             <!-- /checkout__info -->
 
-                        </div>
-                        <!-- /checkout__info-billing -->
+                            <h2 class="checkout__title">your BILLING info</h2>
 
-                        <!-- nice-checkbox -->
-                        <div class="nice-checkbox checkout__show-billing">
-                            <input type="checkbox" name="billing" checked id="billing">
-                            <label for="billing">same as SHIPPING</label>
-                        </div>
-                        <!-- /nice-checkbox -->
+                            <!-- checkout__info-billing -->
+                            <div class="checkout__info-billing">
 
-                        <!-- checkout__proceed -->
-                        <div class="checkout__proceed">
-                            <button type="submit" class="btn btn_5"><span>PROCEED TO CHECKOUT</span></button>
+                                <!-- checkout__info -->
+                                <div class="checkout__info">
+                                    <div>
+
+                                        <!-- checkout__fields -->
+                                        <fieldset class="checkout__fields">
+                                            <div>
+                                                <label class="site__label" for="first-name1">FIRST NAME</label>
+                                            </div>
+                                            <div>
+                                                <input class="site__input" data-required type="text" id="first-name1" name="first-name1">
+                                            </div>
+                                        </fieldset>
+                                        <!-- /checkout__fields -->
+
+                                        <!-- checkout__fields -->
+                                        <fieldset class="checkout__fields">
+                                            <div><label class="site__label" for="last-name1">LAST NAME</label></div>
+                                            <div><input class="site__input" data-required type="text" id="last-name1" name="last-name1"></div>
+                                        </fieldset>
+                                        <!-- /checkout__fields -->
+
+                                        <!-- checkout__fields -->
+                                        <fieldset class="checkout__fields">
+                                            <div><label class="site__label" for="email1">E-MAIL</label></div>
+                                            <div><input class="site__input" data-required type="email" id="email1" name="email1"></div>
+                                        </fieldset>
+                                        <!-- /checkout__fields -->
+
+                                        <!-- checkout__fields -->
+                                        <fieldset class="checkout__fields">
+                                            <div> <label class="site__label" for="phone1">PHONE</label></div>
+                                            <div><input class="site__input" data-required type="tel" id="phone1" name="phone1"></div>
+                                        </fieldset>
+                                        <!-- /checkout__fields -->
+
+                                    </div>
+                                    <div>
+
+                                        <!-- checkout__fields -->
+                                        <fieldset class="checkout__fields">
+                                            <div><label class="site__label" for="address3">ADDRESS</label></div>
+                                            <div><input class="site__input" data-required type="text" id="address3" name="address3"></div>
+                                        </fieldset>
+                                        <!-- /checkout__fields -->
+
+                                        <!-- checkout__fields -->
+                                        <fieldset class="checkout__fields">
+                                            <div><label class="site__label" for="address4">ADDRESS</label></div>
+                                            <div><input class="site__input" data-required type="text" id="address4" name="address4"></div>
+                                        </fieldset>
+                                        <!-- /checkout__fields -->
+
+                                        <!-- checkout__fields -->
+                                        <fieldset class="checkout__fields">
+                                            <div><label class="site__label" for="city1">CITY & STATE</label></div>
+                                            <div class="checkout__fields__two">
+                                                <div>
+
+                                                    <input class="site__input" data-required type="text" id="city1" name="city1">
+                                                    <select name="state1" id="state1">
+                                                        <option value="0">State1</option>
+                                                        <option value="1">State2</option>
+                                                        <option value="2">State3</option>
+                                                        <option value="3">State4</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <!-- /checkout__fields -->
+
+                                        <!-- checkout__fields -->
+                                        <fieldset class="checkout__fields checkout__fields_zip">
+                                            <div><label class="site__label" for="zip1">ZIP</label></div>
+                                            <div><input class="site__input" data-required type="text" id="zip1" name="zip1"></div>
+                                        </fieldset>
+                                        <!-- /checkout__fields -->
+
+                                    </div>
+                                </div>
+                                <!-- /checkout__info -->
+
+                            </div>
+                            <!-- /checkout__info-billing -->
+
+                            <!-- nice-checkbox -->
+                            <div class="nice-checkbox checkout__show-billing">
+                                <input type="checkbox" name="billing" checked id="billing">
+                                <label for="billing">same as SHIPPING</label>
+                            </div>
+                            <!-- /nice-checkbox -->
+
+                            <!-- checkout__proceed -->
+                            <div class="checkout__proceed">
+                                <a href="#" class="btn btn_5">PROCEED TO CHECKOUT</a>
+                            </div>
+                            <!-- /checkout__proceed -->
+
                         </div>
-                        <!-- /checkout__proceed -->
+                        <!-- /checkout__form -->
+
+                        <!-- my-cart__review -->
+                        <div class="my-cart__review">
+                            <h2 class="site__title site__title_4">Please review YOUR order</h2>
+
+                            <!-- my-cart__items -->
+                            <div class="my-cart__items">
+                                <dl>
+                                    <dt>Matt’s Cookies: Peanut Butter, 25oz x 1</dt>
+                                    <dd>$3.75</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Matt’s Cookies: Double Chocolate, 25oz x 1</dt>
+                                    <dd>$3.75</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Matt’s Cookies: Peanut Butter, 25oz x 1</dt>
+                                    <dd>$3.75</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Matt’s Cookies: Double Chocolate, 25oz x 1</dt>
+                                    <dd>$3.75</dd>
+                                </dl>
+                            </div>
+                            <!-- /my-cart__items -->
+
+                            <!-- my-cart__items -->
+                            <div class="my-cart__items">
+                                <dl>
+                                    <dt>Shipping</dt>
+                                    <dd>$3.75</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Tax</dt>
+                                    <dd>$3.75</dd>
+                                </dl>
+                            </div>
+                            <!-- /my-cart__items -->
+
+                            <!-- my-cart__results -->
+                            <div class="my-cart__results">
+                                <dl>
+                                    <dt>TOTAL:</dt>
+                                    <dd>$13.75</dd>
+                                </dl>
+                            </div>
+                            <!-- /my-cart__results -->
+
+                            <a href="#" class="btn btn_5"><span>PROCEED TO Payment</span></a>
+
+                        </div>
+                        <!-- /my-cart__review -->
 
                     </form>
 
@@ -456,9 +514,9 @@
             <div class="site__footer-top">
 
                 <!-- site__footer-logo -->
-                <div class="site__footer-logo">
+                <a href="#" class="site__footer-logo">
                     <img src="img/footer-logo.png" width="276" height="206" alt="">
-                </div>
+                </a>
                 <!-- /site__footer-logo -->
 
                 <!-- site__footer-address -->

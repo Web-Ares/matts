@@ -4,6 +4,21 @@
   line-height: 17px;
   @include main-font4();
 
+  &.empty {
+
+    .my-cart__empty {
+      opacity: 1;
+      visibility: visible;
+      height: auto;
+    }
+    .my-cart__products {
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+    }
+
+  }
+
   p {
     margin: 0 0 19px;
   }
@@ -17,8 +32,8 @@
 .my-cart__product {
   position: relative;
   overflow: hidden;
-  -webkit-transition: height 0.5s ease, -webkit-transform 0.5s ease, opacity 0.5s ease;
-  transition: height 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
+  -webkit-transition: height 0.5s ease, -webkit-transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+  transition: height 0.5s ease, transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
   -webkit-transform-origin: top;
   transform-origin: top;
 
@@ -48,6 +63,9 @@
   padding: 0 0 0 15px;
   font-size: 12px;
   line-height: 15px;
+  color: #512c1d;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
 
   >div {
     width: 51%;
@@ -62,6 +80,10 @@
   }
   span {
     display: block;
+  }
+
+  &:hover {
+    color: #c90615;
   }
 
 }
@@ -125,20 +147,44 @@
   cursor: pointer;
   z-index: 3;
 
+  > span {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin: -16px 0 0 -1px;
+    width: 36px;
+    height: 36px;
+    border-radius: 80px;
+    background: transparent;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid #7a222e;
+    border-left: 5px solid #7a222e;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #7a222e;
+    border-bottom: 5px solid #7a222e;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    -webkit-animation: cwSpin 1s linear .2s infinite;
+    animation: cwSpin .666s linear .2s infinite;
+
+  }
+
   &:after,
   &:before {
     position: absolute;
     top: 50%;
     left: 0;
     right: 0;
-    height: 2px;
+    height: 3px;
     background: #512c1d;
     transform-origin: center;
     content: '';
-    -webkit-transition: background 0.3s ease;
-    transition: background 0.3s ease;
+    -webkit-transition: visibility 0.5s ease, opacity 0.5s ease, background 0.3s ease;
+    transition: visibility 0.5s ease, opacity 0.5s ease, background 0.3s ease;
   }
-  &:after{
+  &:after {
     transform: translateY( 50% ) rotate( 45deg );
   }
   &:before {
@@ -156,6 +202,25 @@
   &:active {
     background-position: 0 bottom;
   }
+
+  &.loading {
+
+    &:after,
+    &:before {
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transition: none;
+      transition: none;
+    }
+    >span {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transition: visibility 0.5s ease, opacity 0.5s ease;
+      transition: visibility 0.5s ease, opacity 0.5s ease;
+    }
+
+  }
+
 }
 .my-cart__footer {
   padding: 15px 26px 0 20px;
@@ -195,8 +260,14 @@
   display: none;
 }
 .my-cart__review {
+  display: none;
   padding: 5px 16px 0;
   text-align: center;
+
+  &.visible {
+    display: block;
+  }
+
 }
 .my-cart__items {
   position: relative;
@@ -262,6 +333,72 @@
 
   }
 
+}
+.my-cart__empty {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  padding: 50px 0;
+  text-align: center;
+  -webkit-transition: visibility 0.5s ease, opacity 0.5s ease;
+  transition: visibility 0.5s ease, opacity 0.5s ease;
+}
+.my-cart__loading {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 1);
+  -webkit-transition: visibility 0.5s ease, opacity 0.5s ease;
+  transition: visibility 0.5s ease, opacity 0.5s ease;
+
+  .my-cart__loading-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 80px;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid #7a222e;
+    border-left: 7px solid #7a222e;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #7a222e;
+    border-bottom: 7px solid #7a222e;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    background: none;
+    -webkit-animation: cwSpin 1s linear .2s infinite;
+    animation: cwSpin .666s linear .2s infinite;
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+}
+
+@-webkit-keyframes cwSpin {
+  0%{
+    -webkit-transform:rotate(0deg);
+  }
+  100%{
+    -webkit-transform:rotate(360deg);
+  }
+}
+@keyframes cwSpin {
+  0%{
+    transform:rotate(0deg);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
 }
 
 @media (min-width: $desktop) {
@@ -365,6 +502,7 @@
   }
   .my-cart__head {
     position: relative;
+    z-index: 4;
     @include flexbox();
     @include flex-direction(row);
     @include align-items(center);

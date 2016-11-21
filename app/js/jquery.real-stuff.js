@@ -1,6 +1,8 @@
 "use strict";
 ( function(){
 
+    var globalScrollFlag = true;
+
     $( function () {
 
         $.each( $( '.real-stuff' ), function() {
@@ -24,6 +26,7 @@
             _obj = obj,
             _window = $(window),
             _globalWidth = 0,
+            _header = $('.site__header'),
             _ingredientsList = _obj.find('.real-stuff__ingredients-list'),
             _dom =  $( 'html, body'),
             _showMoreBtn = _obj.find('.btn');
@@ -43,7 +46,11 @@
 
                             _globalWidth = _window.width() + 1;
 
-                            _closeList( _showMoreBtn, _showMoreBtn.data('close') );
+                            if( _showMoreBtn.hasClass('opened') ) {
+
+                                _closeList( _showMoreBtn, _showMoreBtn.data('close') );
+
+                            }
 
                         }
 
@@ -80,7 +87,27 @@
                     height: 0
                 } );
                 _dom.stop( true, false );
-                _dom.animate( { scrollTop: $('.real-stuff').offset().top - 40 - $('.site__header').innerHeight()  }, 300 );
+                _dom.animate( {
+                    scrollTop: $('.real-stuff').offset().top - $('.site__header').innerHeight()
+
+                }, {
+                    duration: 500,
+                    progress: function () {
+                        globalScrollFlag = false;
+                        _header.addClass( 'site__header_hidden' );
+                    },
+                    complete: function () {
+
+                        setTimeout( function() {
+                            globalScrollFlag = false;
+                        }, 200 );
+
+                        setTimeout( function() {
+                            globalScrollFlag = true
+                        }, 500 );
+
+                    }
+                });
 
             },
             _openList = function( elem, text ) {
@@ -91,7 +118,27 @@
                     height: _ingredientsList.find('>div').innerHeight()
                 } );
                 _dom.stop( true, false );
-                _dom.animate( { scrollTop: _ingredientsList.offset().top - 40 - $('.site__header').innerHeight()  }, 300 );
+                _dom.animate( {
+                    scrollTop: _ingredientsList.offset().top - $('.site__header').innerHeight()
+
+                }, {
+                    duration: 500,
+                    progress: function () {
+                        globalScrollFlag = false;
+                        _header.addClass( 'site__header_hidden' );
+                    },
+                    complete: function () {
+
+                        setTimeout( function() {
+                            globalScrollFlag = false;
+                        }, 200 );
+
+                        setTimeout( function() {
+                            globalScrollFlag = true
+                        }, 500 );
+
+                    }
+                });
 
             },
             _init = function() {
@@ -158,7 +205,7 @@
                     },
                     resize: function () {
 
-                        if( _window.width() >= 1024 ) {
+                        if( ( _window.width() >= 1024 ) ) {
 
                             _setPos();
 

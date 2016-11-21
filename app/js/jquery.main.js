@@ -362,13 +362,11 @@
 
                         var curItem = $( this ),
                             newClass = curItem.attr('data-href'),
-                            nextItemTop = $( '.' + newClass  ).offset().top - _header.innerHeight();
+                            nextItemTop = $( '.' + newClass  ).offset().top;
 
-                        _links.removeClass('active');
+
+                        $('.site__menu-nav_anchors a').removeClass('active');
                         curItem.addClass('active');
-
-                        nextItemTop = $( '.' + newClass  ).offset().top;
-
 
                         _dom.stop( true, false );
                         _dom.animate( {
@@ -406,38 +404,9 @@
                 } );
 
             },
-            _changeActive = function () {
-
-                var scrollTop = $(window).scrollTop(),
-                    item = $('body').find('[data-scroll="scroll"]'),
-                    itemPos = item.offset().top;
-
-                for(var i = 0; i < item.length; i++ ) {
-
-                    var cur = $(item[i]),
-                        itemCur = $(item[i]).offset().top - _header.outerHeight(true),
-                        itemHeight = $(item[i]).outerHeight(true);
-
-                    if( scrollTop > itemCur ) {
-
-                        var curClass = cur.attr('class').split(' '),
-                            curLink = _links.filter("[data-href="+curClass[0]+"]");
-
-                        _links.removeClass('active');
-                        curLink.addClass('active');
-
-                    }
-                    if( scrollTop > ( itemCur + itemHeight ) ){
-
-                        _links.removeClass('active');
-
-                    }
-                }
-            },
             _init = function() {
                 _obj[0].obj = _self;
                 _addEvents();
-                //_changeActive();
             };
 
         _init();

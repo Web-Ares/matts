@@ -106,6 +106,7 @@
     </style>
 
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/store-finder.min.css">
     <link rel="stylesheet" href="css/perfect-scrollbar.css">
     <link rel="stylesheet" href="css/index.css">
 
@@ -444,7 +445,7 @@
                             <div class="real-stuff__products-img">
 
                                 <!-- real-stuff__description -->
-                                <div class="real-stuff__description real-stuff__description_1 popup__open cookies-info_btn" data-popup="cookies-info">
+                                    <div class="real-stuff__description real-stuff__description_1 popup__open cookies-info_btn" data-popup="cookies-info">
 
                                     <a class="real-stuff__description-btn" href="#"></a>
                                     <div class="real-stuff__description-content">
@@ -772,7 +773,7 @@
 
                         </div>
                         <!-- /store-finders__fields -->
-                        
+
                     </form>
 
                 </div>
@@ -910,6 +911,8 @@
             </div>
             <!-- /products-cookies -->
 
+            <!--<a href="#" class="popup__open btn" data-popup="store-finder"></a>-->
+
         </div>
         <!-- /site__content -->
 
@@ -919,9 +922,9 @@
             <div class="site__footer-top">
 
                 <!-- site__footer-logo -->
-                <div class="site__footer-logo">
+                <h2 class="site__footer-logo">
                     <img src="img/footer-logo.png" width="276" height="206" alt="">
-                </div>
+                </h2>
                 <!-- /site__footer-logo -->
 
                 <!-- site__footer-address -->
@@ -1126,6 +1129,134 @@
             </div>
             <!-- /popup__content -->
 
+            <!-- popup__content -->
+            <div class="popup__content popup__store-finder">
+
+                <!-- popup__close -->
+                <div class="popup__close">
+
+                </div>
+                <!-- /popup__close -->
+
+                <!-- store-finder__popup -->
+                <div class="store-finder__popup">
+
+                    <h2 class="site__main-title site__main-title_5">STORE FINDER</h2>
+
+                    <!-- store-finder__inner -->
+                    <div class="store-finder__inner">
+
+                        <div id="wpsl-wrap" class="wpsl-default-filters">
+                            <div class="wpsl-search wpsl-clearfix wpsl-no-filters">
+                                <div id="wpsl-search-wrap">
+                                    <form autocomplete="off">
+                                        <div class="wpsl-input">
+                                            <div>
+                                                <label for="wpsl-search-input">Your location</label>
+                                            </div>
+                                            <input id="wpsl-search-input" type="text" value="" name="wpsl-search-input" placeholder="" aria-required="true">
+                                        </div>
+                                        <div class="wpsl-search-btn-wrap">
+                                            <input id="wpsl-search-btn" type="submit" value="Search">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div id="wpsl-gmap" class="wpsl-gmap-canvas" style="position: relative; overflow: hidden;">
+                                <img src="pic/map1.jpg" width="640" height="303" alt="">
+                            </div>
+                            <div id="wpsl-result-list">
+                                <div id="wpsl-stores">
+                                    <ul>
+                                        <li data-store-id="134">
+                                            <div class="wpsl-store-location">
+                                                <p>
+
+                                                    <strong>Test Location</strong>
+
+                                                    <span class="wpsl-street">1 S State St</span>
+
+                                                    <span>Chicago  </span>
+                                                    <span class="wpsl-country">USA</span>
+                                                </p>
+
+                                            </div>
+                                            <div class="wpsl-direction-wrap">
+                                                0 km
+                                                <a class="wpsl-directions" href="#">Directions</a>
+                                            </div>
+                                        </li>
+                                        <li data-store-id="138">
+                                            <div class="wpsl-store-location">
+                                                <p>
+
+                                                    <strong>Test location 2</strong>
+
+                                                    <span class="wpsl-street">Chelsea Market, 425 W 15th St, New York, NY 10011,</span>
+
+                                                    <span>New York  </span>
+                                                    <span class="wpsl-country">USA</span>
+                                                </p>
+
+                                            </div>
+                                            <div class="wpsl-direction-wrap">
+                                                1143.4 km
+                                                <a class="wpsl-directions" href="#">Directions</a>
+                                            </div>
+                                        </li>
+                                        <li data-store-id="138">
+                                            <div class="wpsl-store-location">
+                                                <p>
+
+                                                    <strong>Test location 2</strong>
+
+                                                    <span class="wpsl-street">Chelsea Market, 425 W 15th St, New York, NY 10011,</span>
+
+                                                    <span>New York  </span>
+                                                    <span class="wpsl-country">USA</span>
+                                                </p>
+
+                                            </div>
+                                            <div class="wpsl-direction-wrap">
+                                                1143.4 km
+                                                <a class="wpsl-directions" href="#">Directions</a>
+                                            </div>
+                                        </li>
+                                        <li data-store-id="138">
+                                            <div class="wpsl-store-location">
+                                                <p>
+
+                                                    <strong>Test location 2</strong>
+
+                                                    <span class="wpsl-street">Chelsea Market, 425 W 15th St, New York, NY 10011,</span>
+
+                                                    <span>New York  </span>
+                                                    <span class="wpsl-country">USA</span>
+                                                </p>
+
+                                            </div>
+                                            <div class="wpsl-direction-wrap">
+                                                1143.4 km
+                                                <a class="wpsl-directions" href="#">Directions</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="wpsl-direction-details">
+                                    <ul></ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /store-finder__inner -->
+
+                </div>
+                <!-- /store-finder__popup -->
+
+            </div>
+            <!-- /popup__content -->
+
         </div>
         <!-- /popup__wrap -->
 
@@ -1138,3 +1269,4 @@
     <script src="js/index.min.js"></script>
 </body>
 </html>
+

@@ -82,7 +82,8 @@ var paths = {
             contains: [
                 'app/js/jquery.main.js',
                 'app/js/jquery.checkout.js',
-                'app/js/jquery.websters-select.js'
+                'app/js/jquery.websters-select.js',
+                'app/js/jquery.form.validator.js'
             ]
         },
         {

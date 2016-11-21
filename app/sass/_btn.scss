@@ -14,8 +14,8 @@
   background: #c90615;
   text-transform: uppercase;
   @include main-font2();
-  -webkit-transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
-  transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+  -webkit-transition: border 0.3s ease, color 0.3s ease;
+  transition: border 0.3s ease, color 0.3s ease;
   transform: perspective(1px) translateZ(0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -43,7 +43,12 @@
       background: #9e0510;
     }
   }
+
   &:hover {
+    background: #7f050f;
+    -webkit-transition: background 0.3s ease 0.3s, border 0.3s ease, color 0.3s ease;
+    transition: background 0.3s ease 0.3s, border 0.3s ease, color 0.3s ease;
+
     &:before {
       -webkit-transform: scaleX(1);
       transform: scaleX(1);
@@ -109,10 +114,10 @@ button.btn {
 
   &:before {
     background: #7f050f;
-
   }
 
   &:hover {
+    background: #7f050f;
     color: #fff;
   }
   &:active {
