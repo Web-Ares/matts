@@ -376,7 +376,6 @@
                 setTimeout( function() {
 
                     $('.site__product').remove();
-                    _addToCartBtn.removeClass('adding');
 
                 }, 700 );
 
@@ -425,6 +424,12 @@
                     }, 700 );
 
                 }
+
+                setTimeout( function() {
+
+                    _addToCartBtn.removeClass('adding');
+
+                }, 700 );
 
             },
             _requestProductAddToCart = function ( elem ) {
