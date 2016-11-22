@@ -756,15 +756,12 @@
                             <div class="store-finders__distance">
                                 <label for="distance">DISTANCE</label>
                                 <select name="distance" id="distance">
-                                    <option value="0">5 Miles</option>
-                                    <option value="1">10 Miles</option>
-                                    <option value="2">15 Miles</option>
-                                    <option value="3">20 Miles</option>
-                                    <option value="4">25 Miles</option>
-                                    <option value="5">30 Miles</option>
-                                    <option value="6">35 Miles</option>
-                                    <option value="7">40 Miles</option>
-                                    <option value="8">45 Miles</option>
+                                    <option value="10">10 mi</option>
+                                    <option value="25">25 mi</option>
+                                    <option value="50">50 mi</option>
+                                    <option value="100">100 mi</option>
+                                    <option value="200">200 mi</option>
+                                    <option value="500">500 mi</option>
                                 </select>
                             </div>
                             <div class="store-finders__search">
@@ -1153,6 +1150,21 @@
                                                 <label for="wpsl-search-input">Your location</label>
                                             </div>
                                             <input id="wpsl-search-input" type="text" value="" name="wpsl-search-input" placeholder="" aria-required="true">
+                                        </div>
+                                        <div class="wpsl-select-wrap">
+                                            <div id="wpsl-radius">
+                                                <label for="wpsl-radius-dropdown">Search radius</label>
+                                                    <div class="wpsl-dropdown">
+                                                    <select id="wpsl-radius-dropdown" class="" name="wpsl-radius">
+                                                        <option value="10">10 mi</option>
+                                                        <option value="25">25 mi</option>
+                                                        <option selected="selected" value="50">50 mi</option>
+                                                        <option value="100">100 mi</option>
+                                                        <option value="200">200 mi</option>
+                                                        <option value="500">500 mi</option>
+                                                    </select>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="wpsl-search-btn-wrap">
                                             <input id="wpsl-search-btn" type="submit" value="Search">

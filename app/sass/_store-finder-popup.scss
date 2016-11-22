@@ -137,6 +137,9 @@
     display: none;
   }
 }
+#wpsl-radius {
+  display: none !important;
+}
 
 .store-finder__popup {
   background: #fff;
@@ -207,9 +210,12 @@
     background: none;
   }
   #wpsl-search-wrap input:not([type='submit']) {
-    width: 100% !important;
     height: 59px;
+    padding: 8px 18px;
+    font-size: 21px;
+    line-height: 21px;
     border-width: 2px;
+    width: 100% !important;
   }
   #wpsl-search-wrap #wpsl-search-btn {
     min-width: 135px;

@@ -5,37 +5,47 @@
 
         $.each( $( '.store-finder' ), function() {
 
-            new ReInitMap ( $( this ) );
+            new WriteDataInPopup ( $( this ) );
 
         } );
 
     } );
 
-    var ReInitMap = function( obj ) {
+    var WriteDataInPopup = function( obj ) {
 
         //private properties
         var _self = this,
             _obj = obj,
+            _input = _obj.find('input'),
+            _select = _obj.find('select'),
             _btnSearch = _obj.find('.store-finders__search');
 
         //private methods
         var _addEvents = function() {
 
-                _btnSearch.on( {
-                    click: function () {
+                _input.on( {
+                    keyup: function () {
 
-                        setTimeout( function() {
-                            mapZoom   = map.getZoom();
-                            mapCenter = map.getCenter();
+                        $('#wpsl-search-input').val( $(this).val() );
 
-                            google.maps.event.trigger( map, "resize" );
+                    }
+                } );
 
-                            map.setZoom( mapZoom );
-                            map.setCenter( mapCenter );
+                $('#wpsl-search-input').on( {
+                    keyup: function () {
 
-                            fitBounds();
+                        _input.val( $(this).val() );
 
-                        }, 50 );
+                    }
+                } );
+
+                _select.on( {
+                    change: function() {
+
+                        var selectedVal = $(this).find('option:selected').val();
+
+                        $('#wpsl-radius-dropdown').find('option:selected').removeAttr('selected');
+                        $('#wpsl-radius-dropdown').find('option[value='+ selectedVal +']').attr('selected', 'selected');
 
                     }
                 } );
