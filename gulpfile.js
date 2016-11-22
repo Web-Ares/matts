@@ -28,7 +28,8 @@ var paths = {
                 'app/js/jquery.info-cookies-popup.js',
                 'app/js/jquery.products-cookies-slider.js',
                 'app/js/jquery.popup.js',
-                'app/js/jquery.websters-select.js'
+                'app/js/jquery.websters-select.js',
+                'app/js/jquery.store-finder.js'
             ]
         },
         {
