@@ -67,7 +67,7 @@
                         setTimeout( function() {
 
                             _writeInCart();
-
+                            _requestCountChange( _obj );
                         }, 100 );
 
                     }
@@ -80,8 +80,8 @@
 
                         setTimeout( function() {
 
-                            _requestCountChange( $(this).parents('.my-cart__product') );
-
+                            _requestCountChange( _obj );
+                          
                         }, 500 );
 
                     }
@@ -134,19 +134,22 @@
                 }, 500 );
 
             },
+            
             _requestProductRemove = function ( elem ) {
 
                 _request.abort();
                 _request = $.ajax( {
                     url: $('body').attr('data-action'),
                     data: {
-                        id: elem.attr('data-id'),
+                        action: 'remove_cart_item',
+                        id: elem.attr('data-product-key'),
                         flag: 'remove'
                     },
                     dataType: 'json',
                     type: "get",
                     success: function (m) {
 
+                       
                         _removeProduct( elem );
 
                         if( parseInt(m.cartCountProducts) == 0 ) {
@@ -180,19 +183,21 @@
 
             },
             _requestCountChange = function ( elem ) {
-
+                
                 _request.abort();
                 _request = $.ajax( {
                     url: $('body').attr('data-action'),
                     data: {
-                        id: elem.attr('data-id'),
+                        action: 'cart_quantity_changes',
+                        id: elem.attr('data-product-id'),
+                        key: elem.attr('data-product-key'),
                         countProduct: elem.find('.count-product__input').val(),
                         flag: 'changeCount'
                     },
                     dataType: 'json',
                     type: "get",
                     success: function (m) {
-
+                        
                         elem.find('.my-cart__total-price').html( m.total );
                         _totalPrice.find('span').html( m.subtotal );
 
@@ -438,6 +443,7 @@
                 _request = $.ajax( {
                     url: $('body').attr('data-action'),
                     data: {
+                        action: 'single_add_product',
                         id: elem.attr('data-id'),
                         countProduct: _input.val(),
                         price: _price.text(),
